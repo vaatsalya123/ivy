@@ -66,7 +66,7 @@
 <li class="toctree-l2"><a class="reference internal" href="15_ivy_tests.html">Ivy Tests 🧪</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Ivy Frontends ➡</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-basics">The Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-frontend-basics">The Frontend Basics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unused-arguments">Unused Arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#compositions">Compositions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#missing-ivy-functions">Missing Ivy Functions</a></li>
@@ -174,10 +174,18 @@ framework-specific frontend functional APIs, which play an important role in cod
 transpilations, as explained <a href="#id5"><span class="problematic" id="id6">`here`_</span></a>.</p>
 <p>Let’s start with some examples to have a better idea on Ivy Frontends!</p>
 </section>
-<section id="the-basics">
-<h2>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this heading"></a></h2>
-<p><strong>NOTE:</strong> Type hints, docstrings and examples are not required when working on
+<section id="the-frontend-basics">
+<h2>The Frontend Basics<a class="headerlink" href="#the-frontend-basics" title="Permalink to this heading"></a></h2>
+<p><strong>NOTE:</strong></p>
+<p>Type hints, docstrings and examples are not required when working on
 frontend functions.</p>
+<p>When using functions and methods of Ivy Frontends, in addition to importing ivy itself
+like <code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">ivy</span></code> please also import the corrisponding Frontend module.
+For example, to use ivy’s tensorflow frontend:</p>
+<blockquote>
+<div><p><code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">ivy.functional.frontends.tensorflow</span> <span class="pre">as</span> <span class="pre">ivy_tf</span></code></p>
+</div></blockquote>
+<hr class="docutils" />
 <p>There will be some implicit discussion of the locations of frontend functions in these examples, however an explicit
 explanation of how to place a frontend function can be found in a sub-section of the Frontend APIs <a class="reference external" href="https://lets-unify.ai/ivy/contributing/4_open_tasks.html#open-tasks">open task</a>.</p>
 <p><strong>Jax</strong></p>
