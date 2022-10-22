@@ -50,7 +50,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../functional/extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/compilation.html">Compilation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/constants.html">Constants</a></li>
@@ -58,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/general.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/gradients.html">Gradients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/layers.html">Layers</a></li>
@@ -166,16 +166,15 @@
 <span class="sd">            Whether to check if the data type is exclusively an array, rather than a</span>
 <span class="sd">            variable or traced array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output, for writing the result to. It must have a shape that the</span>
 <span class="sd">            inputs broadcast to.</span>
@@ -220,16 +219,15 @@
 <span class="sd">            Whether to check if the data type is exclusively an array, rather than a</span>
 <span class="sd">            variable or traced array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output, for writing the result to. It must have a shape that the</span>
 <span class="sd">            inputs broadcast to.</span>
@@ -274,16 +272,15 @@
 <span class="sd">            Whether to check if the data type is exclusively an array, rather than a</span>
 <span class="sd">            variable or traced array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output, for writing the result to. It must have a shape that the</span>
 <span class="sd">            inputs broadcast to.</span>
@@ -328,16 +325,15 @@
 <span class="sd">            Whether to check if the data type is exclusively an array, rather than a</span>
 <span class="sd">            variable or traced array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output, for writing the result to. It must have a shape that the</span>
 <span class="sd">            inputs broadcast to.</span>
@@ -382,16 +378,15 @@
 <span class="sd">            Whether to check if the data type is exclusively an array, rather than a</span>
 <span class="sd">            variable or traced array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output, for writing the result to. It must have a shape that the</span>
 <span class="sd">            inputs broadcast to.</span>
@@ -436,16 +431,15 @@
 <span class="sd">            Whether to check if the data type is exclusively an array, rather than a</span>
 <span class="sd">            variable or traced array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output, for writing the result to. It must have a shape that the</span>
 <span class="sd">            inputs broadcast to.</span>
@@ -486,16 +480,15 @@
 <span class="sd">        x</span>
 <span class="sd">            The input to check</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output, for writing the result to. It must have a shape that the</span>
 <span class="sd">            inputs broadcast to.</span>
@@ -535,16 +528,15 @@
 <span class="sd">        self</span>
 <span class="sd">            The input to check</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output, for writing the result to. It must have a shape that the</span>
 <span class="sd">            inputs broadcast to.</span>
@@ -590,16 +582,15 @@
 <span class="sd">        p</span>
 <span class="sd">            optional float, the p-value for computing the p-norm. Default is 2.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output array, for writing the result to. It must</span>
 <span class="sd">            have a shape that the inputs broadcast to.</span>
@@ -613,7 +604,8 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` instance method:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]),b=ivy.array([3., 4., 5.]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \</span>
+<span class="sd">                              b=ivy.array([3., 4., 5.]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_clip_vector_norm(x, 2.0)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -660,16 +652,15 @@
 <span class="sd">        p</span>
 <span class="sd">            optional float, the p-value for computing the p-norm. Default is 2.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output array, for writing the result to. It must</span>
 <span class="sd">            have a shape that the inputs broadcast to.</span>
@@ -683,8 +674,8 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` instance method:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]),</span>
-<span class="sd">        ...                   b=ivy.array([3., 4., 5.]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \</span>
+<span class="sd">                              b=ivy.array([3., 4., 5.]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.clip_vector_norm(2.0, p=1.0)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -728,16 +719,15 @@
 <span class="sd">        val</span>
 <span class="sd">            value to update the input container with</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output array, for writing the result to. It must</span>
 <span class="sd">            have a shape that the inputs broadcast to.</span>
@@ -787,16 +777,15 @@
 <span class="sd">        val</span>
 <span class="sd">            value to update the input container with</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output array, for writing the result to. It must</span>
 <span class="sd">            have a shape that the inputs broadcast to.</span>
@@ -840,16 +829,15 @@
 <span class="sd">        val</span>
 <span class="sd">            The value of decrement.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -859,7 +847,8 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        Decrement by a value</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0.5, -5., 30.]),b=ivy.array([0., -25., 50.]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0.5, -5., 30.]), \</span>
+<span class="sd">                              b=ivy.array([0., -25., 50.]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.inplace_decrement(x, 1.5)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -919,16 +908,15 @@
 <span class="sd">        val</span>
 <span class="sd">            The value of decrement.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -938,9 +926,9 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        Using :class:`ivy.Container` instance method:</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([-6.7, 2.4, -8.5]),</span>
-<span class="sd">        ...                   b=ivy.array([1.5, -0.3, 0]),</span>
-<span class="sd">        ...                   c=ivy.array([-4.7, -5.4, 7.5]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([-6.7, 2.4, -8.5]),\</span>
+<span class="sd">                               b=ivy.array([1.5, -0.3, 0]),\</span>
+<span class="sd">                               c=ivy.array([-4.7, -5.4, 7.5]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.inplace_decrement(2)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -982,16 +970,15 @@
 <span class="sd">        val</span>
 <span class="sd">            The value of increment.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1001,7 +988,8 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        Increment by a value</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0.5, -5., 30.]),b=ivy.array([0., -25., 50.]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0.5, -5., 30.]), \</span>
+<span class="sd">                              b=ivy.array([0., -25., 50.]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.inplace_increment(x, 1.5)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -1061,16 +1049,15 @@
 <span class="sd">        val</span>
 <span class="sd">            The value of increment.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1080,9 +1067,9 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        Using :class:`ivy.Container` instance method:</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([-6.7, 2.4, -8.5]),</span>
-<span class="sd">        ...                   b=ivy.array([1.5, -0.3, 0]),</span>
-<span class="sd">        ...                   c=ivy.array([-4.7, -5.4, 7.5]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([-6.7, 2.4, -8.5]),\</span>
+<span class="sd">                               b=ivy.array([1.5, -0.3, 0]),\</span>
+<span class="sd">                               c=ivy.array([-4.7, -5.4, 7.5]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.inplace_increment(2)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -1121,16 +1108,15 @@
 <span class="sd">        x</span>
 <span class="sd">            input container to check for inplace support for.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1165,16 +1151,15 @@
 <span class="sd">        x</span>
 <span class="sd">            input container to check for inplace support for.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1192,8 +1177,10 @@
 
 <div class="viewcode-block" id="ContainerWithGeneral.static_all_equal"><a class="viewcode-back" href="../../../data_classes/container/general/ContainerWithGeneral.html#ivy.container.general.ContainerWithGeneral.static_all_equal">[docs]</a>    <span class="nd">staticmethod</span>
     <span class="k">def</span> <span class="nf">static_all_equal</span><span class="p">(</span>
-        <span class="n">x1</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
-        <span class="o">*</span><span class="n">xs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+        <span class="n">x1</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+        <span class="n">x2</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
         <span class="n">equality_matrix</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -1209,22 +1196,21 @@
 <span class="sd">        ----------</span>
 <span class="sd">        x1</span>
 <span class="sd">            input container.</span>
-<span class="sd">        xs</span>
-<span class="sd">            arrays or containers to be compared to ``x1``.</span>
+<span class="sd">        x2</span>
+<span class="sd">            array or container to be compared to ``x1``.</span>
 <span class="sd">        equality_matrix</span>
 <span class="sd">            Whether to return a matrix of equalities comparing each input with every</span>
-<span class="sd">            other. Default is ``False``.</span>
+<span class="sd">            other. Default is False.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1247,10 +1233,10 @@
 
 <span class="sd">        With multiple :class:`ivy.Container` input:</span>
 
-<span class="sd">        &gt;&gt;&gt; x1 = ivy.Container(a=ivy.array([1, 0, 1, 1]),</span>
-<span class="sd">        ...                    b=ivy.native_array([1, 0, 0, 1]))</span>
-<span class="sd">        &gt;&gt;&gt; x2 = ivy.Container(a=ivy.native_array([1, 0, 1, 1]),</span>
-<span class="sd">        ...                    b=ivy.array([1, 0, -1, -1]))</span>
+<span class="sd">        &gt;&gt;&gt; x1 = ivy.Container(a=ivy.array([1, 0, 1, 1]), \</span>
+<span class="sd">                                b=ivy.native_array([1, 0, 0, 1]))</span>
+<span class="sd">        &gt;&gt;&gt; x2 = ivy.Container(a=ivy.native_array([1, 0, 1, 1]), \</span>
+<span class="sd">                                b=ivy.array([1, 0, -1, -1]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_all_equal(x1, x2, equality_matrix= False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -1262,7 +1248,7 @@
         <span class="k">return</span> <span class="n">ContainerBase</span><span class="o">.</span><span class="n">multi_map_in_static_method</span><span class="p">(</span>
             <span class="s2">&quot;all_equal&quot;</span><span class="p">,</span>
             <span class="n">x1</span><span class="p">,</span>
-            <span class="o">*</span><span class="n">xs</span><span class="p">,</span>
+            <span class="n">x2</span><span class="p">,</span>
             <span class="n">equality_matrix</span><span class="o">=</span><span class="n">equality_matrix</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
@@ -1272,7 +1258,9 @@
 
 <div class="viewcode-block" id="ContainerWithGeneral.all_equal"><a class="viewcode-back" href="../../../data_classes/container/general/ContainerWithGeneral.html#ivy.container.general.ContainerWithGeneral.all_equal">[docs]</a>    <span class="k">def</span> <span class="nf">all_equal</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
-        <span class="o">*</span><span class="n">xs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+        <span class="n">x2</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
         <span class="n">equality_matrix</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -1288,22 +1276,21 @@
 <span class="sd">        ----------</span>
 <span class="sd">        self</span>
 <span class="sd">            input container.</span>
-<span class="sd">        xs</span>
-<span class="sd">            arrays or containers to be compared to ``self``.</span>
+<span class="sd">        x2</span>
+<span class="sd">            array or container to be compared to ``self``.</span>
 <span class="sd">        equality_matrix</span>
 <span class="sd">            Whether to return a matrix of equalities comparing each input with every</span>
-<span class="sd">            other. Default is ``False``.</span>
+<span class="sd">            other. Default is False.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1335,10 +1322,10 @@
 
 <span class="sd">        With multiple :class:`ivy.Container` instances:</span>
 
-<span class="sd">        &gt;&gt;&gt; x1 = ivy.Container(a=ivy.native_array([1, 0, 0]),</span>
-<span class="sd">        ...                    b=ivy.array([1, 2, 3]))</span>
-<span class="sd">        &gt;&gt;&gt; x2 = ivy.Container(a=ivy.native_array([1, 0, 1]),</span>
-<span class="sd">        ...                    b=ivy.array([1, 2, 3]))</span>
+<span class="sd">        &gt;&gt;&gt; x1 = ivy.Container(a=ivy.native_array([1, 0, 0]),\</span>
+<span class="sd">                                b=ivy.array([1, 2, 3]))</span>
+<span class="sd">        &gt;&gt;&gt; x2 = ivy.Container(a=ivy.native_array([1, 0, 1]),\</span>
+<span class="sd">                                b=ivy.array([1, 2, 3]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x1.all_equal(x2, equality_matrix= False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -1346,10 +1333,10 @@
 <span class="sd">            b: true</span>
 <span class="sd">        }</span>
 
-<span class="sd">        &gt;&gt;&gt; x1 = ivy.Container(a=ivy.native_array([1, 0, 0]),</span>
-<span class="sd">        ...                    b=ivy.array([1, 2, 3]))</span>
-<span class="sd">        &gt;&gt;&gt; x2 = ivy.Container(a=ivy.native_array([1, 0, 1]),</span>
-<span class="sd">        ...                    b=ivy.array([1, 2, 3]))</span>
+<span class="sd">        &gt;&gt;&gt; x1 = ivy.Container(a=ivy.native_array([1, 0, 0]),\</span>
+<span class="sd">                                b=ivy.array([1, 2, 3]))</span>
+<span class="sd">        &gt;&gt;&gt; x2 = ivy.Container(a=ivy.native_array([1, 0, 1]),\</span>
+<span class="sd">                                b=ivy.array([1, 2, 3]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_all_equal(x1, x2, equality_matrix= False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -1360,7 +1347,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_all_equal</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
-            <span class="o">*</span><span class="n">xs</span><span class="p">,</span>
+            <span class="n">x2</span><span class="p">,</span>
             <span class="n">equality_matrix</span><span class="o">=</span><span class="n">equality_matrix</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
@@ -1397,21 +1384,20 @@
 <span class="sd">            The number of frequency bands for the encoding. Default is 4.</span>
 <span class="sd">        linear</span>
 <span class="sd">            Whether to space the frequency bands linearly as opposed to geometrically.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        flatten</span>
 <span class="sd">            Whether to flatten the position dimension into the batch dimension.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1461,25 +1447,24 @@
 <span class="sd">            The number of frequency bands for the encoding. Default is 4.</span>
 <span class="sd">        linear</span>
 <span class="sd">            Whether to space the frequency bands linearly as opposed to geometrically.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        flatten</span>
 <span class="sd">            Whether to flatten the position dimension into the batch dimension.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        dtype</span>
 <span class="sd">            Data type of the returned array. Default is ``None``.</span>
 <span class="sd">        out</span>
-<span class="sd">            Optional output container. Default is ``None``.</span>
+<span class="sd">            Optional output container. Default is None.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1526,22 +1511,21 @@
 <span class="sd">            The container or array which indicates the indices that will be</span>
 <span class="sd">            gathered along the specified axis.</span>
 <span class="sd">        axis</span>
-<span class="sd">            The axis from which the indices will be gathered. Default is ``-1``.</span>
+<span class="sd">            The axis from which the indices will be gathered. Default is -1.</span>
 <span class="sd">        batch_dims</span>
 <span class="sd">            optional int, lets you gather different items from each element of a batch.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
-<span class="sd">            optional array, for writing the result to. It must have a shape</span>
+<span class="sd">            optional array, for writing the result to. It must have a shape </span>
 <span class="sd">            that the inputs broadcast to.</span>
 
 
@@ -1555,10 +1539,10 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` input:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array([0., 1., 2.]),</span>
-<span class="sd">        ...                   b = ivy.array([4., 5., 6.]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a = ivy.array([0, 1]),</span>
-<span class="sd">        ...                   b = ivy.array([1, 2]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array([0., 1., 2.]), \</span>
+<span class="sd">                            b = ivy.array([4., 5., 6.]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a = ivy.array([0, 1]), \</span>
+<span class="sd">                            b = ivy.array([1, 2]))</span>
 <span class="sd">        &gt;&gt;&gt; print(ivy.Container.static_gather(x, y))</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([0., 1.]),</span>
@@ -1566,9 +1550,9 @@
 <span class="sd">        }</span>
 
 <span class="sd">        With a mix of :class:`ivy.Array` and :class:`ivy.Container` inputs:</span>
-
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array([0., 1., 2.]),</span>
-<span class="sd">        ...                   b = ivy.array([4., 5., 6.]))</span>
+<span class="sd">        </span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array([0., 1., 2.]), \</span>
+<span class="sd">                            b = ivy.array([4., 5., 6.]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.array([0, 1])</span>
 <span class="sd">        &gt;&gt;&gt; print(ivy.Container.static_gather(x, y))</span>
 <span class="sd">        {</span>
@@ -1616,22 +1600,22 @@
 <span class="sd">            The container or array which indicates the indices that will be</span>
 <span class="sd">            gathered along the specified axis.</span>
 <span class="sd">        axis</span>
-<span class="sd">            The axis from which the indices will be gathered. Default is ``-1``.</span>
+<span class="sd">            The axis from which the indices will be gathered. Default is -1.</span>
 <span class="sd">        batch_dims</span>
 <span class="sd">            optional int, lets you gather different items from each element of a batch.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
 <span class="sd">            Whether to also map method to sequences (lists, tuples). Default is</span>
 <span class="sd">            False.</span>
 <span class="sd">        out</span>
-<span class="sd">            optional array, for writing the result to. It must have a shape</span>
+<span class="sd">            optional array, for writing the result to. It must have a shape </span>
 <span class="sd">            that the inputs broadcast to.</span>
 
 <span class="sd">        Returns</span>
@@ -1642,16 +1626,16 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array([0., 1., 2.]),</span>
-<span class="sd">        ...                   b = ivy.array([4., 5., 6.]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a = ivy.array([0, 1]),</span>
-<span class="sd">        ...                   b = ivy.array([1, 2]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array([0., 1., 2.]), \</span>
+<span class="sd">                          b = ivy.array([4., 5., 6.]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a = ivy.array([0, 1]), \</span>
+<span class="sd">                            b = ivy.array([1, 2]))</span>
 <span class="sd">        &gt;&gt;&gt; print(x.gather(y))</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([0., 1.]),</span>
 <span class="sd">            b: ivy.array([5., 6.])</span>
 <span class="sd">        }</span>
-
+<span class="sd">        </span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_gather</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
@@ -1667,35 +1651,57 @@
 
 <div class="viewcode-block" id="ContainerWithGeneral.static_has_nans"><a class="viewcode-back" href="../../../data_classes/container/general/ContainerWithGeneral.html#ivy.container.general.ContainerWithGeneral.static_has_nans">[docs]</a>    <span class="nd">staticmethod</span>
     <span class="k">def</span> <span class="nf">static_has_nans</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+        <span class="n">x</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
-        <span class="n">include_infs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">include_infs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Determine whether arrays in the container contain any nans, as well as infs</span>
-<span class="sd">        or -infs if specified.</span>
+<span class="sd">        ivy.Container static method variant of ivy.has_nans. This method simply wraps</span>
+<span class="sd">        the function, and so the docstring for ivy.has_nans also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        x</span>
-<span class="sd">            The container to check for nans.</span>
+<span class="sd">            Input container.</span>
 <span class="sd">        include_infs</span>
-<span class="sd">            Whether to include infs and -infs in the check. Default is True.</span>
+<span class="sd">            Whether to include ``+infinity`` and ``-infinity`` in the check.</span>
+<span class="sd">            Default is True.</span>
+<span class="sd">        key_chains</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">        to_apply</span>
+<span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
+<span class="sd">            will be skipped. Default is True.</span>
+<span class="sd">        prune_unapplied</span>
+<span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
+<span class="sd">            Default is False.</span>
+<span class="sd">        map_sequences</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            Whether the container has any nans, applied either leafwise or across the</span>
-<span class="sd">            entire container.</span>
+<span class="sd">        ret</span>
+<span class="sd">            container of booleans, whether there is a nans at indices.</span>
 
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        With :class:`ivy.Container` input:</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]), b=ivy.array([1, 2, float(&#39;nan&#39;)]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_has_nans(x)</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        {</span>
+<span class="sd">            a: false,</span>
+<span class="sd">            b: true</span>
+<span class="sd">        }</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ContainerBase</span><span class="o">.</span><span class="n">multi_map_in_static_method</span><span class="p">(</span>
             <span class="s2">&quot;has_nans&quot;</span><span class="p">,</span>
-            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">x</span><span class="p">,</span>
             <span class="n">include_infs</span><span class="o">=</span><span class="n">include_infs</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
@@ -1714,17 +1720,43 @@
         <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Determine whether arrays in the container contain any nans, as well as infs</span>
-<span class="sd">        or -infs if specified.</span>
+<span class="sd">        ivy.Container instance method variant of ivy.has_nans.</span>
+<span class="sd">        This method simply wraps the function, and so the docstring</span>
+<span class="sd">        for ivy.has_nans also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            The container from which to check nans.</span>
 <span class="sd">        include_infs</span>
-<span class="sd">            Whether to include infs and -infs in the check. Default is True.</span>
+<span class="sd">            Whether to include ``+infinity`` and ``-infinity`` in the check.</span>
+<span class="sd">            Default is True.</span>
+<span class="sd">        key_chains</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">        to_apply</span>
+<span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
+<span class="sd">            will be skipped. Default is True.</span>
+<span class="sd">        prune_unapplied</span>
+<span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
+<span class="sd">            Default is False.</span>
+<span class="sd">        map_sequences</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            Whether the container has any nans, applied across the entire container.</span>
+<span class="sd">        ret</span>
+<span class="sd">            Boolean, true if container has a nans, false otherwise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]), b=ivy.array([1, 2, float(&#39;nan&#39;)]))</span>
+<span class="sd">        &gt;&gt;&gt; y = x.has_nans()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        {</span>
+<span class="sd">            a: false,</span>
+<span class="sd">            b: true</span>
+<span class="sd">        }</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_has_nans</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
@@ -1761,22 +1793,21 @@
 <span class="sd">        updates</span>
 <span class="sd">            values to update input tensor with</span>
 <span class="sd">        shape</span>
-<span class="sd">            The shape of the result. Default is ``None``, in which case tensor argument</span>
+<span class="sd">            The shape of the result. Default is None, in which case tensor argument</span>
 <span class="sd">            must be provided.</span>
 <span class="sd">        reduction</span>
 <span class="sd">            The reduction method for the scatter, one of &#39;sum&#39;, &#39;min&#39;, &#39;max&#39;</span>
 <span class="sd">            or &#39;replace&#39;</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to. It must have a shape</span>
 <span class="sd">            that the inputs broadcast to.</span>
@@ -1789,13 +1820,12 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        scatter into an empty array</span>
-
-<span class="sd">        &gt;&gt;&gt; indices = ivy.Container(a=ivy.array([[5],[6],[7]]),</span>
-<span class="sd">        ...                         b=ivy.array([[2],[3],[4]]))</span>
-<span class="sd">        &gt;&gt;&gt; updates = ivy.Container(a=ivy.array([50, 60, 70]),</span>
-<span class="sd">        ...                         b=ivy.array([20, 30, 40]))</span>
-<span class="sd">        &gt;&gt;&gt; shape = ivy.Container(a=ivy.array([10]),</span>
-<span class="sd">        ...                       b=ivy.array([10]))</span>
+<span class="sd">        &gt;&gt;&gt; indices = ivy.Container(a=ivy.array([[5],[6],[7]]),\</span>
+<span class="sd">                                    b=ivy.array([[2],[3],[4]]))</span>
+<span class="sd">        &gt;&gt;&gt; updates = ivy.Container(a=ivy.array([50, 60, 70]),\</span>
+<span class="sd">                                    b=ivy.array([20, 30, 40]))</span>
+<span class="sd">        &gt;&gt;&gt; shape = ivy.Container(a=ivy.array([10]),\</span>
+<span class="sd">                                b = ivy.array([10]))</span>
 <span class="sd">        &gt;&gt;&gt; z = ivy.Container.static_scatter_nd(indices, updates, shape=shape)</span>
 <span class="sd">        &gt;&gt;&gt; print(z)</span>
 <span class="sd">        {</span>
@@ -1804,15 +1834,14 @@
 <span class="sd">        }</span>
 
 <span class="sd">        scatter into a container</span>
-
-<span class="sd">        &gt;&gt;&gt; indices = ivy.Container(a=ivy.array([[5],[6],[7]]),</span>
-<span class="sd">        ...          b=ivy.array([[2],[3],[4]]))</span>
-<span class="sd">        &gt;&gt;&gt; updates = ivy.Container(a=ivy.array([50, 60, 70]),</span>
-<span class="sd">        ...                         b=ivy.array([20, 30, 40]))</span>
-<span class="sd">        &gt;&gt;&gt; z = ivy.Container(a=ivy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),</span>
-<span class="sd">        ...                   b=ivy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))</span>
-<span class="sd">        &gt;&gt;&gt; ivy.Container.static_scatter_nd(indices, updates,</span>
-<span class="sd">        ...                                    reduction=&#39;replace&#39;, out = z)</span>
+<span class="sd">        &gt;&gt;&gt; indices = ivy.Container(a=ivy.array([[5],[6],[7]]),\</span>
+<span class="sd">                  b=ivy.array([[2],[3],[4]]))</span>
+<span class="sd">        &gt;&gt;&gt; updates = ivy.Container(a=ivy.array([50, 60, 70]),\</span>
+<span class="sd">                        b=ivy.array([20, 30, 40]))</span>
+<span class="sd">        &gt;&gt;&gt; z = ivy.Container(a=ivy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),\</span>
+<span class="sd">                                b = ivy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))</span>
+<span class="sd">        &gt;&gt;&gt; ivy.Container.static_scatter_nd(indices, updates,\</span>
+<span class="sd">                                            reduction=&#39;replace&#39;, out = z)</span>
 <span class="sd">        &gt;&gt;&gt; print(z)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([1, 2, 3, 4, 5, 50, 60, 70, 9, 10]),</span>
@@ -1859,22 +1888,21 @@
 <span class="sd">        updates</span>
 <span class="sd">            values to update input tensor with</span>
 <span class="sd">        shape</span>
-<span class="sd">            The shape of the result. Default is ``None``, in which case tensor argument</span>
+<span class="sd">            The shape of the result. Default is None, in which case tensor argument</span>
 <span class="sd">            must be provided.</span>
 <span class="sd">        reduction</span>
 <span class="sd">            The reduction method for the scatter, one of &#39;sum&#39;, &#39;min&#39;, &#39;max&#39;</span>
 <span class="sd">            or &#39;replace&#39;</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to. It must have a shape</span>
 <span class="sd">            that the inputs broadcast to.</span>
@@ -1887,13 +1915,12 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        scatter into an empty container</span>
-
-<span class="sd">        &gt;&gt;&gt; indices = ivy.Container(a=ivy.array([[4],[3],[6]]),</span>
-<span class="sd">        ...                         b=ivy.array([[5],[1],[2]]))</span>
-<span class="sd">        &gt;&gt;&gt; updates = ivy.Container(a=ivy.array([100, 200, 200]),</span>
-<span class="sd">        ...                         b=ivy.array([20, 30, 40]))</span>
-<span class="sd">        &gt;&gt;&gt; shape = ivy.Container(a=ivy.array([10]),</span>
-<span class="sd">        ...                       b=ivy.array([10]))</span>
+<span class="sd">        &gt;&gt;&gt; indices = ivy.Container(a=ivy.array([[4],[3],[6]]),\</span>
+<span class="sd">                        b=ivy.array([[5],[1],[2]]))</span>
+<span class="sd">        &gt;&gt;&gt; updates = ivy.Container(a=ivy.array([100, 200, 200]),\</span>
+<span class="sd">                        b=ivy.array([20, 30, 40]))</span>
+<span class="sd">        &gt;&gt;&gt; shape = ivy.Container(a=ivy.array([10]),\</span>
+<span class="sd">                        b = ivy.array([10]))</span>
 <span class="sd">        &gt;&gt;&gt; z = indices.scatter_nd(updates, shape=shape)</span>
 <span class="sd">        &gt;&gt;&gt; print(z)</span>
 <span class="sd">        {</span>
@@ -1902,13 +1929,12 @@
 <span class="sd">        }</span>
 
 <span class="sd">        scatter into a container.</span>
-
-<span class="sd">        &gt;&gt;&gt; indices = ivy.Container(a=ivy.array([[5],[6],[7]]),</span>
-<span class="sd">        ...                         b=ivy.array([[2],[3],[4]]))</span>
-<span class="sd">        &gt;&gt;&gt; updates = ivy.Container(a=ivy.array([50, 60, 70]),</span>
-<span class="sd">        ...                         b=ivy.array([20, 30, 40]))</span>
-<span class="sd">        &gt;&gt;&gt; z = ivy.Container(a=ivy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),</span>
-<span class="sd">        ...                   b=ivy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))</span>
+<span class="sd">        &gt;&gt;&gt; indices = ivy.Container(a=ivy.array([[5],[6],[7]]),\</span>
+<span class="sd">                                    b=ivy.array([[2],[3],[4]]))</span>
+<span class="sd">        &gt;&gt;&gt; updates = ivy.Container(a=ivy.array([50, 60, 70]),\</span>
+<span class="sd">                                    b=ivy.array([20, 30, 40]))</span>
+<span class="sd">        &gt;&gt;&gt; z = ivy.Container(a=ivy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),\</span>
+<span class="sd">                                b = ivy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))</span>
 <span class="sd">        &gt;&gt;&gt; indices.scatter_nd(updates,reduction=&#39;replace&#39;, out = z)</span>
 <span class="sd">        &gt;&gt;&gt; print(z)</span>
 <span class="sd">        {</span>
@@ -1959,16 +1985,15 @@
 <span class="sd">            The reduction method for the scatter, one of &#39;sum&#39;, &#39;min&#39;, &#39;max&#39;</span>
 <span class="sd">            or &#39;replace&#39;</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to. It must have a shape</span>
 <span class="sd">            that the inputs broadcast to.</span>
@@ -2022,16 +2047,15 @@
 <span class="sd">            The reduction method for the scatter, one of &#39;sum&#39;, &#39;min&#39;, &#39;max&#39;</span>
 <span class="sd">            or &#39;replace&#39;</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to. It must have a shape</span>
 <span class="sd">            that the inputs broadcast to.</span>
@@ -2059,7 +2083,6 @@
         <span class="n">indices</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
-        <span class="n">batch_dims</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -2074,27 +2097,26 @@
 <span class="sd">        indices</span>
 <span class="sd">            Index array.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">            Container object with all sub-array dimensions gathered.</span>
-
+<span class="sd">        </span>
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 10., 20.],[30.,40.,50.]]),</span>
-<span class="sd">        ...                   b=ivy.array([[0., 100., 200.],[300.,400.,500.]]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([1,0]),</span>
-<span class="sd">        ...                   b=ivy.array([0]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 10., 20.],[30.,40.,50.]]),\</span>
+<span class="sd">                              b=ivy.array([[0., 100., 200.],[300.,400.,500.]]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([1,0]),\</span>
+<span class="sd">                                b=ivy.array([0]))</span>
 <span class="sd">        &gt;&gt;&gt; print(ivy.Container.static_gather_nd(x, y))</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array(30.),</span>
@@ -2106,7 +2128,6 @@
             <span class="s2">&quot;gather_nd&quot;</span><span class="p">,</span>
             <span class="n">params</span><span class="p">,</span>
             <span class="n">indices</span><span class="p">,</span>
-            <span class="n">batch_dims</span><span class="o">=</span><span class="n">batch_dims</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
             <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
@@ -2119,7 +2140,6 @@
         <span class="n">indices</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
-        <span class="n">batch_dims</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -2139,16 +2159,15 @@
 <span class="sd">        indices</span>
 <span class="sd">            Index array or container.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as</span>
 <span class="sd">            ``x`` if None.</span>
@@ -2163,24 +2182,23 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[[0., 10.], [20.,30.]],</span>
-<span class="sd">        ...                                [[40.,50.], [60.,70.]]]),</span>
-<span class="sd">        ...                   b=ivy.array([[[0., 100.], [200.,300.]],</span>
-<span class="sd">        ...                                [[400.,500.],[600.,700.]]]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([1,0]),</span>
-<span class="sd">        ...                   b=ivy.array([0]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[[0., 10.], [20.,30.]],\</span>
+<span class="sd">                                            [[40.,50.],[60.,70.]]]),\</span>
+<span class="sd">                              b=ivy.array([[[0., 100.], [200.,300.]],\</span>
+<span class="sd">                                            [[400.,500.],[600.,700.]]]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([1,0]),\</span>
+<span class="sd">                                b=ivy.array([0]))</span>
 <span class="sd">        &gt;&gt;&gt; z = x.gather_nd(y)</span>
 <span class="sd">        &gt;&gt;&gt; print(z)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([40., 50.]),</span>
-<span class="sd">            b: ivy.array([[0., 100.],</span>
+<span class="sd">            b: ivy.array([[0., 100.], </span>
 <span class="sd">                        [200., 300.]])</span>
 <span class="sd">        }</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_gather_nd</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">indices</span><span class="p">,</span>
-            <span class="n">batch_dims</span><span class="o">=</span><span class="n">batch_dims</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
             <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
@@ -2212,16 +2230,15 @@
 <span class="sd">            One of available reductions (&#39;min&#39;, &#39;max&#39;, &#39;sum&#39;, &#39;mean&#39;, &#39;prod&#39;), or</span>
 <span class="sd">            callable.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        axes_lengths</span>
 <span class="sd">            Any additional specifications for dimensions.</span>
 
@@ -2231,10 +2248,10 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[-4.47, 0.93, -3.34],</span>
-<span class="sd">        ...                                [3.66, 24.29, 3.64]]),</span>
-<span class="sd">        ...                   b=ivy.array([[4.96, 1.52, -10.67],</span>
-<span class="sd">        ...                                [4.36, 13.96, 0.3]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[-4.47, 0.93, -3.34],\</span>
+<span class="sd">                                      [3.66, 24.29, 3.64]]),\</span>
+<span class="sd">                        b=ivy.array([[4.96, 1.52, -10.67],\</span>
+<span class="sd">                                     [4.36, 13.96, 0.3]]))</span>
 <span class="sd">        &gt;&gt;&gt; reduced = ivy.Container.static_einops_reduce(x, &#39;a b -&gt; a&#39;, &#39;mean&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; print(reduced)</span>
 <span class="sd">        {</span>
@@ -2284,16 +2301,15 @@
 <span class="sd">            One of available reductions (&#39;min&#39;, &#39;max&#39;, &#39;sum&#39;, &#39;mean&#39;, &#39;prod&#39;), or</span>
 <span class="sd">            callable.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to. It must have a</span>
 <span class="sd">            shape that the inputs broadcast to.</span>
@@ -2307,16 +2323,16 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[[5, 4, 3],</span>
-<span class="sd">        ...                                 [11, 2, 9]],</span>
-<span class="sd">        ...                                [[3, 5, 7],</span>
-<span class="sd">        ...                                 [9, 7, 1]]]),</span>
-<span class="sd">        ...                    b=ivy.array([[[9,7,6],</span>
-<span class="sd">        ...                                  [5,2,1]],</span>
-<span class="sd">        ...                                 [[4,1,2],</span>
-<span class="sd">        ...                                  [2,3,6]],</span>
-<span class="sd">        ...                                 [[1, 9, 6],</span>
-<span class="sd">        ...                                  [0, 2, 1]]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[[5, 4, 3],\</span>
+<span class="sd">                                           [11, 2, 9]],\</span>
+<span class="sd">                                          [[3, 5, 7],\</span>
+<span class="sd">                                           [9, 7, 1]]]),\</span>
+<span class="sd">                            b=ivy.array([[[9,7,6],\</span>
+<span class="sd">                                          [5,2,1]],\</span>
+<span class="sd">                                        [[4,1,2],\</span>
+<span class="sd">                                         [2,3,6]],\</span>
+<span class="sd">                                        [[1, 9, 6],\</span>
+<span class="sd">                                         [0, 2, 1]]]))</span>
 <span class="sd">        &gt;&gt;&gt; reduced = x.einops_reduce(&#39;a b c -&gt; a b&#39;, &#39;sum&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; print(reduced)</span>
 <span class="sd">        {</span>
@@ -2360,16 +2376,15 @@
 <span class="sd">        pattern</span>
 <span class="sd">            Rearrangement pattern.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        axes_lengths</span>
 <span class="sd">            Any additional specifications for dimensions.</span>
 <span class="sd">        **axes_lengths</span>
@@ -2380,10 +2395,10 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[30, 40], [50, 75]]),</span>
-<span class="sd">        ...                   b=ivy.array([[1, 2], [4, 5]]))</span>
-<span class="sd">        &gt;&gt;&gt; repeated = ivy.Container.static_einops_repeat(</span>
-<span class="sd">        ...    x, &#39;h w -&gt; (tile h) w&#39;, tile=2)</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[30, 40], [50, 75]]),\</span>
+<span class="sd">                            b=ivy.array([[1, 2], [4, 5]]))</span>
+<span class="sd">        &gt;&gt;&gt; repeated = ivy.Container.static_einops_repeat(\</span>
+<span class="sd">            x, &#39;h w -&gt; (tile h) w&#39;, tile=2)</span>
 <span class="sd">        &gt;&gt;&gt; print(repeated)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([[30, 40],</span>
@@ -2435,16 +2450,15 @@
 <span class="sd">        axes_lengths</span>
 <span class="sd">            Any additional specifications for dimensions.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to. It must have a</span>
 <span class="sd">            shape that the inputs broadcast to.</span>
@@ -2456,8 +2470,8 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[30, 40], [50, 75]]),</span>
-<span class="sd">        ...                   b=ivy.array([[1, 2], [4, 5]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[30, 40], [50, 75]]),\</span>
+<span class="sd">                             b=ivy.array([[1, 2], [4, 5]]))</span>
 <span class="sd">        &gt;&gt;&gt; repeated = x.einops_repeat(&#39;h w -&gt;  h  (w tile)&#39;, tile=2)</span>
 <span class="sd">        &gt;&gt;&gt; print(repeated)</span>
 <span class="sd">        {</span>
@@ -2500,19 +2514,18 @@
 <span class="sd">        x</span>
 <span class="sd">            input container.</span>
 <span class="sd">        include_infs</span>
-<span class="sd">            Whether to include infs and -infs in the check. Default is ``True``.</span>
+<span class="sd">            Whether to include infs and -infs in the check. Default is True.</span>
 <span class="sd">        key_chains</span>
 <span class="sd">            The key-chains to apply or not apply the method to. Default is</span>
 <span class="sd">            None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -2522,7 +2535,6 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` input:</span>
-
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([452]), b=ivy.array([float(&#39;inf&#39;)]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_value_is_nan(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
@@ -2532,7 +2544,6 @@
 <span class="sd">        }</span>
 
 <span class="sd">        With :class:`ivy.Container` input:</span>
-
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([float(&#39;nan&#39;)]), b=ivy.array([0]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_value_is_nan(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
@@ -2542,7 +2553,6 @@
 <span class="sd">        }</span>
 
 <span class="sd">        With :class:`ivy.Container` input:</span>
-
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([float(&#39;inf&#39;)]), b=ivy.array([22]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_value_is_nan(x, include_infs=False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
@@ -2581,19 +2591,18 @@
 <span class="sd">        self</span>
 <span class="sd">            input container.</span>
 <span class="sd">        include_infs</span>
-<span class="sd">            Whether to include infs and -infs in the check. Default is ``True``.</span>
+<span class="sd">            Whether to include infs and -infs in the check. Default is True.</span>
 <span class="sd">        key_chains</span>
 <span class="sd">            The key-chains to apply or not apply the method to. Default is</span>
 <span class="sd">            None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise</span>
-<span class="sd">            key_chains will be skipped. Default is ``True``.</span>
+<span class="sd">            key_chains will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -2640,7 +2649,6 @@
         <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
-        <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -2655,19 +2663,16 @@
 <span class="sd">        ----------</span>
 <span class="sd">        x</span>
 <span class="sd">            input container.</span>
-<span class="sd">        copy</span>
-<span class="sd">            Whether to copy the input. Default is ``True``.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -2679,8 +2684,8 @@
 <span class="sd">        --------</span>
 <span class="sd">        With one :class:`ivy.Container` inputs:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 0, 1, 1]),</span>
-<span class="sd">        ...                   b=ivy.array([1, -1, 0, 0]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 0, 1, 1]),\</span>
+<span class="sd">                            b=ivy.array([1, -1, 0, 0]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_to_numpy(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -2688,8 +2693,8 @@
 <span class="sd">            b: array([1, -1, 0, 0])</span>
 <span class="sd">        }</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1., 0., 0., 1.]),</span>
-<span class="sd">        ...                   b=ivy.native_array([1, 1, -1, 0]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1., 0., 0., 1.]),\</span>
+<span class="sd">                            b=ivy.native_array([1, 1, -1, 0]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_to_numpy(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -2700,9 +2705,9 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        With one :class:`ivy.Container` static method:</span>
-
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([-1, 0, 1]),</span>
-<span class="sd">        ...                   b=ivy.array([-1, 0, 1, 1, 1, 0]))</span>
+<span class="sd">        </span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([-1, 0, 1]),\</span>
+<span class="sd">                            b=ivy.array([-1, 0, 1, 1, 1, 0]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_has_nans(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -2714,7 +2719,6 @@
         <span class="k">return</span> <span class="n">ContainerBase</span><span class="o">.</span><span class="n">multi_map_in_static_method</span><span class="p">(</span>
             <span class="s2">&quot;to_numpy&quot;</span><span class="p">,</span>
             <span class="n">x</span><span class="p">,</span>
-            <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
             <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
@@ -2725,7 +2729,6 @@
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
-        <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -2740,19 +2743,16 @@
 <span class="sd">        ----------</span>
 <span class="sd">        self</span>
 <span class="sd">            input container.</span>
-<span class="sd">        copy</span>
-<span class="sd">            Whether to copy the input. Default is ``True``.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -2764,38 +2764,38 @@
 <span class="sd">        --------</span>
 <span class="sd">        With one :class:`ivy.Container` instances:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.native_array([[-1, 0, 1], [-1, 0, 1], [1, 0, -1]]),</span>
-<span class="sd">        ...                   b=ivy.native_array([[-1, 0, 0], [1, 0, 1], [1, 1, 1]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.native_array([[-1, 0, 1], [-1, 0, 1], [1, 0, -1]]),\</span>
+<span class="sd">                    b=ivy.native_array([[-1, 0, 0], [1, 0, 1], [1, 1, 1]]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.to_numpy()</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: array([[-1, 0, 1],</span>
 <span class="sd">                      [-1, 0, 1],</span>
-<span class="sd">                      [1, 0, -1]],dtype=int32),</span>
+<span class="sd">                      [1, 0, -1]]),</span>
 <span class="sd">            b: array([[-1, 0, 0],</span>
 <span class="sd">                      [1, 0, 1],</span>
-<span class="sd">                      [1, 1, 1]]), dtype=int32</span>
+<span class="sd">                      [1, 1, 1]])</span>
 <span class="sd">        }</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.native_array([[-1, 0, 1], [-1, 0, 1], [1, 0, -1]]),</span>
-<span class="sd">        ...                   b=ivy.native_array([[-1, 0, 0], [1, 0, 1], [1, 1, 1]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.native_array([[-1, 0, 1], [-1, 0, 1], [1, 0, -1]]),\</span>
+<span class="sd">                            b=ivy.native_array([[-1, 0, 0], [1, 0, 1], [1, 1, 1]]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_to_numpy(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: array([[-1, 0, 1],</span>
 <span class="sd">                      [-1, 0, 1],</span>
-<span class="sd">                      [1, 0, -1]],dtype=int32),</span>
+<span class="sd">                      [1, 0, -1]]),</span>
 <span class="sd">            b: array([[-1, 0, 0],</span>
 <span class="sd">                      [1, 0, 1],</span>
-<span class="sd">                      [1, 1, 1]]),dtype=int32</span>
+<span class="sd">                      [1, 1, 1]])</span>
 <span class="sd">        }</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` instance method:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 0, 1]),</span>
-<span class="sd">        ...                   b=ivy.array([-1, 0, 1, 1]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 0, 1]),\</span>
+<span class="sd">                            b=ivy.array([-1, 0, 1, 1]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.has_nans()</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -2806,7 +2806,6 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_to_numpy</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
-            <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
             <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
@@ -2833,16 +2832,15 @@
 <span class="sd">        x</span>
 <span class="sd">            input container.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -2852,7 +2850,7 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        With one :class:`ivy.Container` input:</span>
+<span class="sd">        With one :class:`ivy.Container` inputs:</span>
 
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([-1]), b=ivy.array([3]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_to_scalar(x)</span>
@@ -2861,6 +2859,13 @@
 <span class="sd">            a: -1,</span>
 <span class="sd">            b: 3</span>
 <span class="sd">        }</span>
+
+<span class="sd">        &gt;&gt;&gt; print(ivy.is_int_dtype(y))</span>
+<span class="sd">        {</span>
+<span class="sd">            a: true,</span>
+<span class="sd">            b: true</span>
+<span class="sd">        }</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ContainerBase</span><span class="o">.</span><span class="n">multi_map_in_static_method</span><span class="p">(</span>
             <span class="s2">&quot;to_scalar&quot;</span><span class="p">,</span>
@@ -2890,16 +2895,15 @@
 <span class="sd">        self</span>
 <span class="sd">            input container.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -2909,11 +2913,11 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        With one :class:`ivy.Container` instance:</span>
+<span class="sd">        With one :class:`ivy.Container` instances:</span>
 
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1]), b=ivy.array([0]),</span>
-<span class="sd">        ...                   c=ivy.array([-1]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1]), b=ivy.array([0]),\</span>
+<span class="sd">                            c=ivy.array([-1]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.to_scalar()</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -2921,6 +2925,8 @@
 <span class="sd">            b: 0,</span>
 <span class="sd">            c: -1</span>
 <span class="sd">        }</span>
+
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_to_scalar</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
@@ -2950,16 +2956,15 @@
 <span class="sd">        x</span>
 <span class="sd">            input container.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -3005,16 +3010,15 @@
 <span class="sd">        self</span>
 <span class="sd">            input container.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -3069,16 +3073,15 @@
 <span class="sd">            Container of the minimum denominator to use,</span>
 <span class="sd">            use global ivy._MIN_DENOMINATOR by default.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -3124,8 +3127,8 @@
 <span class="sd">            b: ivy.array([0.857, 10.])</span>
 <span class="sd">        }</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.asarray([1., 2.], [3., 4.]),</span>
-<span class="sd">        ...                   b=ivy.asarray([5., 6.], [7., 8.]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.asarray([1., 2.], [3., 4.]),\</span>
+<span class="sd">                              b=ivy.asarray([5., 6.], [7., 8.]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.asarray([0.5, 2.5]), b=ivy.asarray([3.5, 0.4]))</span>
 <span class="sd">        &gt;&gt;&gt; z = ivy.Container.stable_divide(x, y, min_denominator=2)</span>
 <span class="sd">        &gt;&gt;&gt; print(z)</span>
@@ -3173,16 +3176,15 @@
 <span class="sd">            Container of the minimum denominator to use,</span>
 <span class="sd">            use global ivy._MIN_DENOMINATOR by default.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -3202,8 +3204,8 @@
 <span class="sd">            b: ivy.array([1.8, 2.4])</span>
 <span class="sd">        }</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.asarray([[2., 4.], [6., 8.]]),</span>
-<span class="sd">        ...                   b=ivy.asarray([[10., 12.], [14., 16.]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.asarray([[2., 4.], [6., 8.]]),\</span>
+<span class="sd">                              b=ivy.asarray([[10., 12.], [14., 16.]]))</span>
 <span class="sd">        &gt;&gt;&gt; z = x.stable_divide(2, min_denominator=2)</span>
 <span class="sd">        &gt;&gt;&gt; print(z)</span>
 <span class="sd">        {</span>
@@ -3259,13 +3261,13 @@
 <span class="sd">        min_base</span>
 <span class="sd">            The minimum base to use, use global ivy._MIN_BASE by default.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise</span>
-<span class="sd">            key_chains will be skipped. Default is ``True``.</span>
+<span class="sd">            key_chains will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
 <span class="sd">            Whether to also map method to sequences (lists, tuples). Default is</span>
 <span class="sd">            False.</span>
@@ -3313,13 +3315,13 @@
 <span class="sd">        min_base</span>
 <span class="sd">            The minimum base to use, use global ivy._MIN_BASE by default.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise</span>
-<span class="sd">            key_chains will be skipped. Default is ``True``.</span>
+<span class="sd">            key_chains will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
 <span class="sd">            Whether to also map method to sequences (lists, tuples). Default is</span>
 <span class="sd">            False.</span>
@@ -3364,16 +3366,15 @@
 <span class="sd">        pattern</span>
 <span class="sd">            Rearrangement pattern.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        axes_lengths</span>
 <span class="sd">            Any additional specifications for dimensions.</span>
 
@@ -3417,16 +3418,15 @@
 <span class="sd">        pattern</span>
 <span class="sd">            Rearrangement pattern.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains will</span>
-<span class="sd">            be skipped. Default is ``True``.</span>
+<span class="sd">            be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied. Default</span>
 <span class="sd">            is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        axes_lengths</span>
 <span class="sd">            Any additional specifications for dimensions.</span>
 <span class="sd">        **axes_lengths</span>
@@ -3475,16 +3475,15 @@
 <span class="sd">        p</span>
 <span class="sd">            The p-value for computing the p-norm. Default is 2.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output array, for writing the result to. It must</span>
 <span class="sd">            have a shape that the inputs broadcast to.</span>
@@ -3498,8 +3497,8 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` input:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 1., 2.]]),</span>
-<span class="sd">        ...                   b=ivy.array([[3., 4., 5.]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 1., 2.]]), \</span>
+<span class="sd">                              b=ivy.array([[3., 4., 5.]]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_clip_matrix_norm(x, 2.0)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -3546,16 +3545,15 @@
 <span class="sd">        p</span>
 <span class="sd">            The p-value for computing the p-norm. Default is 2.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output array, for writing the result to. It must</span>
 <span class="sd">            have a shape that the inputs broadcast to.</span>
@@ -3569,8 +3567,8 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` instance method:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 1., 2.]]),</span>
-<span class="sd">        ...                   b=ivy.array([[3., 4., 5.]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 1., 2.]]), \</span>
+<span class="sd">                              b=ivy.array([[3., 4., 5.]]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.clip_matrix_norm(2.0, p=1.0)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
@@ -3611,17 +3609,17 @@
 <span class="sd">            An ivy.Container.</span>
 <span class="sd">        key_chains</span>
 <span class="sd">            The key-chains to apply or not apply the method to.</span>
-<span class="sd">            Default is ``None``.</span>
+<span class="sd">            Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
 <span class="sd">            will be skipped.</span>
-<span class="sd">            Default is ``True``.</span>
+<span class="sd">            Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
 <span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -3638,7 +3636,6 @@
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        With `ivy.Container` input and backend set as &#39;numpy&#39;:</span>
-
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array(1.0), b=ivy.array(2))</span>
 <span class="sd">        &gt;&gt;&gt; ret = ivy.Container.static_supports_inplace_updates(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(ret)</span>
@@ -3648,9 +3645,8 @@
 <span class="sd">        }</span>
 
 <span class="sd">        With `ivy.Container` input and backend set as &#39;tensorflow&#39;:</span>
-
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.variable(ivy.array([2.0, 0.0])),</span>
-<span class="sd">        ...                   b=ivy.array([0., 5.5, -8]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.variable(ivy.array([2.0, 0.0])),\</span>
+<span class="sd">                              b=ivy.array([0., 5.5, -8]))</span>
 <span class="sd">        &gt;&gt;&gt; ret = ivy.Container.static_supports_inplace_updates(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(ret)</span>
 <span class="sd">        {</span>
@@ -3687,17 +3683,17 @@
 <span class="sd">            An ivy.Container whose elements are data types supported by Ivy.</span>
 <span class="sd">        key_chains</span>
 <span class="sd">            The key-chains to apply or not apply the method to.</span>
-<span class="sd">            Default is ``None``.</span>
+<span class="sd">            Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
 <span class="sd">            will be skipped.</span>
-<span class="sd">            Default is ``True``.</span>
+<span class="sd">            Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
 <span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -3712,176 +3708,22 @@
 <span class="sd">        &gt;&gt;&gt; ret = x.supports_inplace_updates()</span>
 <span class="sd">        &gt;&gt;&gt; print(ret)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: false,</span>
-<span class="sd">            b: false</span>
+<span class="sd">            a: true,</span>
+<span class="sd">            b: true</span>
 <span class="sd">        }</span>
 
 <span class="sd">        With an `ivy.Container` instance and backend set as &#39;tensorflow&#39;:</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.variable(ivy.array([2.0, 0.0])),</span>
-<span class="sd">        ...                   b=ivy.array([0., 5.5, -8]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.variable(ivy.array([2.0, 0.0])),\</span>
+<span class="sd">                              b=ivy.array([0., 5.5, -8]))</span>
 <span class="sd">        &gt;&gt;&gt; ret = x.supports_inplace_updates()</span>
 <span class="sd">        &gt;&gt;&gt; print(ret)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: false,</span>
-<span class="sd">            b: false</span>
+<span class="sd">            a: true,</span>
+<span class="sd">            b: true</span>
 <span class="sd">        }</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ContainerWithGeneral</span><span class="o">.</span><span class="n">static_supports_inplace_updates</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
-            <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
-            <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
-            <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
-            <span class="n">map_sequences</span><span class="o">=</span><span class="n">map_sequences</span><span class="p">,</span>
-        <span class="p">)</span></div>
-
-<div class="viewcode-block" id="ContainerWithGeneral.static_get_num_dims"><a class="viewcode-back" href="../../../data_classes/container/general/ContainerWithGeneral.html#ivy.container.general.ContainerWithGeneral.static_get_num_dims">[docs]</a>    <span class="nd">staticmethod</span>
-    <span class="k">def</span> <span class="nf">static_get_num_dims</span><span class="p">(</span>
-        <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
-        <span class="o">/</span><span class="p">,</span>
-        <span class="o">*</span><span class="p">,</span>
-        <span class="n">as_array</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        ivy.Container instance method variant of ivy.get_num_dims. This method</span>
-<span class="sd">        simply wraps the function, and so the docstring for ivy.get_num_dims</span>
-<span class="sd">        also applies to this method with minimal changes.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        x</span>
-<span class="sd">            ivy.Container to infer the number of dimensions for</span>
-<span class="sd">        as_array</span>
-<span class="sd">            Whether to return the shape as a array, default False.</span>
-<span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
-<span class="sd">        to_apply</span>
-<span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
-<span class="sd">        prune_unapplied</span>
-<span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
-<span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
-
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        ret</span>
-<span class="sd">            Shape of the array</span>
-
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(b = ivy.asarray([[0.,1.,1.],[1.,0.,0.],[8.,2.,3.]]))</span>
-<span class="sd">        &gt;&gt;&gt; ivy.Container.static_get_num_dims(x)</span>
-<span class="sd">        {</span>
-<span class="sd">            b: 2</span>
-<span class="sd">        }</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]]</span>
-<span class="sd">        ...                                    [[0,0,0],[0,0,0],[0,0,0]],</span>
-<span class="sd">        ...                                    [[0,0,0],[0,0,0],[0,0,0]]]))</span>
-<span class="sd">        &gt;&gt;&gt; ivy.Container.static_get_num_dims(x)</span>
-<span class="sd">        {</span>
-<span class="sd">            b: 3</span>
-<span class="sd">        }</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],</span>
-<span class="sd">        ...                                    [[0,0,0],[0,0,0],[0,0,0]]]),</span>
-<span class="sd">        ...                                    c = ivy.asarray([[0.,1.,1.],[8.,2.,3.]]))</span>
-<span class="sd">        &gt;&gt;&gt; ivy.Container.static_get_num_dims(x)</span>
-<span class="sd">        {</span>
-<span class="sd">            b: 3,</span>
-<span class="sd">            c: 2</span>
-<span class="sd">        }</span>
-<span class="sd">        &gt;&gt;&gt; ivy.Container.static_get_num_dims(x, as_array=True)</span>
-<span class="sd">        {</span>
-<span class="sd">            b: ivy.array(3),</span>
-<span class="sd">            c: ivy.array(2)</span>
-<span class="sd">        }</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ContainerBase</span><span class="o">.</span><span class="n">multi_map_in_static_method</span><span class="p">(</span>
-            <span class="s2">&quot;get_num_dims&quot;</span><span class="p">,</span>
-            <span class="n">x</span><span class="p">,</span>
-            <span class="n">as_array</span><span class="o">=</span><span class="n">as_array</span><span class="p">,</span>
-            <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
-            <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
-            <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
-            <span class="n">map_sequences</span><span class="o">=</span><span class="n">map_sequences</span><span class="p">,</span>
-        <span class="p">)</span></div>
-
-<div class="viewcode-block" id="ContainerWithGeneral.get_num_dims"><a class="viewcode-back" href="../../../data_classes/container/general/ContainerWithGeneral.html#ivy.container.general.ContainerWithGeneral.get_num_dims">[docs]</a>    <span class="k">def</span> <span class="nf">get_num_dims</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
-        <span class="o">/</span><span class="p">,</span>
-        <span class="o">*</span><span class="p">,</span>
-        <span class="n">as_array</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        ivy.Container instance method variant of ivy.get_num_dims. This method</span>
-<span class="sd">        simply wraps the function, and so the docstring for ivy.get_num_dims</span>
-<span class="sd">        also applies to this method with minimal changes.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        self</span>
-<span class="sd">            ivy.Container to infer the number of dimensions for</span>
-<span class="sd">        as_array</span>
-<span class="sd">            Whether to return the shape as a array, default False.</span>
-<span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
-<span class="sd">        to_apply</span>
-<span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
-<span class="sd">        prune_unapplied</span>
-<span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
-<span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
-
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        ret</span>
-<span class="sd">            Shape of the array</span>
-
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; a = ivy.Container(b = ivy.asarray([[0.,1.,1.],[1.,0.,0.],[8.,2.,3.]]))</span>
-<span class="sd">        &gt;&gt;&gt; a.get_num_dims()</span>
-<span class="sd">        {</span>
-<span class="sd">            b: 2</span>
-<span class="sd">        }</span>
-<span class="sd">        &gt;&gt;&gt; a = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],</span>
-<span class="sd">        ...                                    [[0,0,0],[0,0,0],[0,0,0]],</span>
-<span class="sd">        ...                                    [[0,0,0],[0,0,0],[0,0,0]]]))</span>
-<span class="sd">        &gt;&gt;&gt; a.get_num_dims()</span>
-<span class="sd">        {</span>
-<span class="sd">            b: 3</span>
-<span class="sd">        }</span>
-<span class="sd">        &gt;&gt;&gt; a = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],</span>
-<span class="sd">        ...                                    [[0,0,0],[0,0,0],[0,0,0]]]),</span>
-<span class="sd">        ...                                    c = ivy.asarray([[0.,1.,1.],[8.,2.,3.]]))</span>
-<span class="sd">        &gt;&gt;&gt; a.get_num_dims()</span>
-<span class="sd">        {</span>
-<span class="sd">            b: 3,</span>
-<span class="sd">            c: 2</span>
-<span class="sd">        }</span>
-<span class="sd">        &gt;&gt;&gt; a.get_num_dims(as_array=True)</span>
-<span class="sd">        {</span>
-<span class="sd">            b: ivy.array(3),</span>
-<span class="sd">            c: ivy.array(2)</span>
-<span class="sd">        }</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ContainerWithGeneral</span><span class="o">.</span><span class="n">static_get_num_dims</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span>
-            <span class="n">as_array</span><span class="o">=</span><span class="n">as_array</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
             <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>

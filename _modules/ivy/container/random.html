@@ -50,7 +50,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../functional/extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/compilation.html">Compilation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/constants.html">Constants</a></li>
@@ -58,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/general.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/gradients.html">Gradients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/layers.html">Layers</a></li>
@@ -171,16 +171,15 @@
 <span class="sd">            values, else exception will be raised.</span>
 <span class="sd">            Default is ``None``, where a single value is returned.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
 <span class="sd">            (Default value = None).</span>
@@ -200,12 +199,12 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` inputs:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9.8,7.6],[6.5,2.3]]),</span>
-<span class="sd">        ...                   b=ivy.array([[0.9,2.4],[7.6,5.4]]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10.9,32.4],[18.7,19.6]]),</span>
-<span class="sd">        ...                   b=ivy.array([[4.3,5.6],[23.4,54.3]]))</span>
-<span class="sd">        &gt;&gt;&gt; ivy.Container.static_random_uniform(low=x, high=y, device=&#39;cpu&#39;,</span>
-<span class="sd">        ...                                     dtype=&#39;float64&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9.8,7.6],[6.5,2.3]]), \</span>
+<span class="sd">                              b=ivy.array([[0.9,2.4],[7.6,5.4]]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10.9,32.4],[18.7,19.6]]), \</span>
+<span class="sd">                              b=ivy.array([[4.3,5.6],[23.4,54.3]]))</span>
+<span class="sd">        &gt;&gt;&gt; ivy.Container.static_random_uniform(low=x, high=y, device=&#39;cpu&#39;, \</span>
+<span class="sd">                                                dtype=&#39;float64&#39;)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([[10.8, 23.7],</span>
 <span class="sd">                          [17., 16.6]]),</span>
@@ -270,16 +269,15 @@
 <span class="sd">            values, else exception will be raised.</span>
 <span class="sd">            Default is ``None``, where a single value is returned.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
 <span class="sd">            (Default value = None).</span>
@@ -361,10 +359,10 @@
 <span class="sd">            b: ivy.array([9.29, 11.2, 9.84])</span>
 <span class="sd">        }</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9.8,7.6],[6.5,2.3]]),</span>
-<span class="sd">        ...                   b=ivy.array([[0.9,2.4],[7.6,5.4]]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10.9,32.4],[18.7,19.6]]),</span>
-<span class="sd">        ...                   b=ivy.array([[4.3,5.6],[23.4,54.3]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9.8,7.6],[6.5,2.3]]), \</span>
+<span class="sd">                              b=ivy.array([[0.9,2.4],[7.6,5.4]]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10.9,32.4],[18.7,19.6]]), \</span>
+<span class="sd">                              b=ivy.array([[4.3,5.6],[23.4,54.3]]))</span>
 <span class="sd">        &gt;&gt;&gt; x.random_uniform(high=y)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([[10.4, 17.],</span>
@@ -451,16 +449,15 @@
 <span class="sd">            values, else exception will be raised.</span>
 <span class="sd">            Default is ``None``, where a single value is returned.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
 <span class="sd">            (Default value = None).</span>
@@ -482,12 +479,12 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` inputs:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9.8,7.6],[6.5,2.3]]),</span>
-<span class="sd">        ...                   b=ivy.array([[0.9,2.4],[7.6,5.4]]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10.9,32.4],[18.7,19.6]]),</span>
-<span class="sd">        ...                   b=ivy.array([[4.3,5.6],[23.4,54.3]]))</span>
-<span class="sd">        &gt;&gt;&gt; ivy.Container.static_random_normal(mean=x, std=y, device=&#39;cpu&#39;,</span>
-<span class="sd">        ...                                       dtype=&#39;float64&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9.8,7.6],[6.5,2.3]]), \</span>
+<span class="sd">                              b=ivy.array([[0.9,2.4],[7.6,5.4]]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10.9,32.4],[18.7,19.6]]), \</span>
+<span class="sd">                              b=ivy.array([[4.3,5.6],[23.4,54.3]]))</span>
+<span class="sd">        &gt;&gt;&gt; ivy.Container.static_random_normal(mean=x, std=y, device=&#39;cpu&#39;, \</span>
+<span class="sd">                                               dtype=&#39;float64&#39;)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([[-4.11, 0.651],</span>
 <span class="sd">                          [19.3, -30.4]]),</span>
@@ -552,16 +549,15 @@
 <span class="sd">            values, else exception will be raised.</span>
 <span class="sd">            Default is ``None``, where a single value is returned.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
 <span class="sd">            (Default value = None).</span>
@@ -579,8 +575,8 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([7.5,6.7,0.9]),</span>
-<span class="sd">        ...                   b=ivy.array([8.7,9.8,4.5]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([7.5,6.7,0.9]), \</span>
+<span class="sd">                              b=ivy.array([8.7,9.8,4.5]))</span>
 <span class="sd">        &gt;&gt;&gt; x.random_normal(std=17.4)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([11.9, -22.9, -24.8]),</span>
@@ -644,10 +640,10 @@
 <span class="sd">            b: ivy.array([22.9, -5.97, -1.28])</span>
 <span class="sd">        }</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9.8,7.6],[6.5,2.3]]),</span>
-<span class="sd">        ...                   b=ivy.array([[0.9,2.4],[7.6,5.4]]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10.9,32.4],[18.7,19.6]]),</span>
-<span class="sd">        ...                   b=ivy.array([[4.3,5.6],[23.4,54.3]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9.8,7.6],[6.5,2.3]]), \</span>
+<span class="sd">                              b=ivy.array([[0.9,2.4],[7.6,5.4]]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10.9,32.4],[18.7,19.6]]), \</span>
+<span class="sd">                              b=ivy.array([[4.3,5.6],[23.4,54.3]]))</span>
 <span class="sd">        &gt;&gt;&gt; x.random_normal(std=y)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([[10.6, 7.89],</span>
@@ -736,18 +732,17 @@
 <span class="sd">            The unnormalized probabilities for all elements in population,</span>
 <span class="sd">            default is uniform *[batch_shape, population_size]*</span>
 <span class="sd">        replace</span>
-<span class="sd">            Whether to replace samples once they&#39;ve been drawn. Default is ``True``.</span>
+<span class="sd">            Whether to replace samples once they&#39;ve been drawn. Default is True.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
 <span class="sd">            (Default value = None)</span>
@@ -810,18 +805,17 @@
 <span class="sd">        batch_size</span>
 <span class="sd">            Number of tensors to generate. Default is 1.</span>
 <span class="sd">        replace</span>
-<span class="sd">            Whether to replace samples once they&#39;ve been drawn. Default is ``True``.</span>
+<span class="sd">            Whether to replace samples once they&#39;ve been drawn. Default is True.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
 <span class="sd">            (Default value = None)</span>
@@ -883,16 +877,15 @@
 <span class="sd">            values, else exception will be raised.</span>
 <span class="sd">            Default is ``None``, where a single value is returned.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
 <span class="sd">            (Default value = None).</span>
@@ -915,10 +908,10 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` inputs:</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9,7],[6,2]]),</span>
-<span class="sd">        ...                   b=ivy.array([[0,2],[10,6]]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10,32],[18,19]]),</span>
-<span class="sd">        ...                   b=ivy.array([[44,5],[23,54]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9,7],[6,2]]), \</span>
+<span class="sd">                              b=ivy.array([[0,2],[10,6]]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10,32],[18,19]]), \</span>
+<span class="sd">                              b=ivy.array([[44,5],[23,54]]))</span>
 <span class="sd">        &gt;&gt;&gt; ivy.Container.static_randint(x, y, device=&#39;cpu&#39;, dtype=&#39;int32&#39;)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([[9, 27],</span>
@@ -983,16 +976,15 @@
 <span class="sd">            values, else exception will be raised.</span>
 <span class="sd">            Default is ``None``, where a single value is returned.</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        device</span>
 <span class="sd">            device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
 <span class="sd">            (Default value = None).</span>
@@ -1013,8 +1005,8 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([7,6,0]),</span>
-<span class="sd">        ...                   b=ivy.array([8,9,4]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([7,6,0]), \</span>
+<span class="sd">                              b=ivy.array([8,9,4]))</span>
 <span class="sd">        &gt;&gt;&gt; x.randint(30)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([23, 15, 20]),</span>
@@ -1078,10 +1070,10 @@
 <span class="sd">            b: ivy.array([8, 9, 4])</span>
 <span class="sd">        }</span>
 
-<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9,7],[6,2]]),</span>
-<span class="sd">        ...                   b=ivy.array([[0,2],[10,6]]))</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10,32],[18,19]]),</span>
-<span class="sd">        ...                   b=ivy.array([[44,5],[23,54]]))</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[9,7],[6,2]]), \</span>
+<span class="sd">                              b=ivy.array([[0,2],[10,6]]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([[10,32],[18,19]]), \</span>
+<span class="sd">                              b=ivy.array([[44,5],[23,54]]))</span>
 <span class="sd">        &gt;&gt;&gt; x.randint(y)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([[9, 7],</span>
@@ -1160,16 +1152,15 @@
 <span class="sd">        seed</span>
 <span class="sd">            A python integer. Used to create a random seed distribution</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to. It must have a shape</span>
 <span class="sd">            that the inputs broadcast to.</span>
@@ -1212,16 +1203,15 @@
 <span class="sd">        seed</span>
 <span class="sd">            A python integer. Used to create a random seed distribution</span>
 <span class="sd">        key_chains</span>
-<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">        to_apply</span>
 <span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
-<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">            will be skipped. Default is True.</span>
 <span class="sd">        prune_unapplied</span>
 <span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Default is False.</span>
 <span class="sd">        map_sequences</span>
-<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
-<span class="sd">            Default is ``False``.</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output container, for writing the result to. It must have a shape</span>
 <span class="sd">            that the inputs broadcast to.</span>

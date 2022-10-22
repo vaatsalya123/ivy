@@ -50,7 +50,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../functional/extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/compilation.html">Compilation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/constants.html">Constants</a></li>
@@ -58,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/general.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/gradients.html">Gradients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../functional/ivy/layers.html">Layers</a></li>
@@ -208,8 +208,8 @@
 <span class="sd">    the activations module as instance methods to our toy `ArrayExample` class:</span>
 
 <span class="sd">    &gt;&gt;&gt; from ivy.functional.ivy import activations</span>
-<span class="sd">    &gt;&gt;&gt; class ArrayExample:</span>
-<span class="sd">    ...     pass</span>
+<span class="sd">    &gt;&gt;&gt; class ArrayExample: \</span>
+<span class="sd">            pass</span>
 <span class="sd">    &gt;&gt;&gt; ivy.add_ivy_array_instance_methods(ArrayExample, [activations])</span>
 <span class="sd">    &gt;&gt;&gt; print(hasattr(ArrayExample, &quot;relu&quot;), hasattr(ArrayExample, &quot;softmax&quot;))</span>
 <span class="sd">    True True</span>
