@@ -130,10 +130,11 @@
   <h1>Source code for ivy.func_wrapper</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">ivy</span>
 <span class="kn">import</span> <span class="nn">functools</span>
-<span class="kn">from</span>  <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">perf_counter</span>
 <span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">FunctionType</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
 
+<span class="n">t1_start</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
 <span class="c1"># for wrapping (sequence matters)</span>
 <span class="n">FN_DECORATORS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;infer_device&quot;</span><span class="p">,</span>
@@ -170,12 +171,14 @@
             <span class="n">arr</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">index_nest</span><span class="p">(</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">arr_idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">arr</span>
 
+<div class="viewcode-block" id="compile_function"><a class="viewcode-back" href="../../func_wrapper/compile_function.html#ivy.func_wrapper.compile_function">[docs]</a><span class="k">def</span> <span class="nf">compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+    <span class="n">data_comp</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span><span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data_comp</span><span class="p">)</span></div>
 
 <span class="c1"># Array Handling #</span>
 <span class="c1"># ---------------#</span>
 <div class="viewcode-block" id="inputs_to_native_arrays"><a class="viewcode-back" href="../../func_wrapper/inputs_to_native_arrays.html#ivy.func_wrapper.inputs_to_native_arrays">[docs]</a><span class="k">def</span> <span class="nf">inputs_to_native_arrays</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="n">data_com</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span><span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts all `ivy.Array` instances in both the positional and keyword arguments</span>
@@ -216,9 +219,7 @@
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 <div class="viewcode-block" id="inputs_to_ivy_arrays"><a class="viewcode-back" href="../../func_wrapper/inputs_to_ivy_arrays.html#ivy.func_wrapper.inputs_to_ivy_arrays">[docs]</a><span class="k">def</span> <span class="nf">inputs_to_ivy_arrays</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="n">data_com1</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span> <span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com1</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts all `ivy.NativeArray` instances in both the positional and keyword</span>
@@ -253,9 +254,7 @@
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 <div class="viewcode-block" id="outputs_to_ivy_arrays"><a class="viewcode-back" href="../../func_wrapper/outputs_to_ivy_arrays.html#ivy.func_wrapper.outputs_to_ivy_arrays">[docs]</a><span class="k">def</span> <span class="nf">outputs_to_ivy_arrays</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="n">data_com2</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span> <span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com2</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calls the function, and then converts all `ivy.NativeArray` instances in</span>
@@ -289,9 +288,7 @@
 
 
 <div class="viewcode-block" id="from_zero_dim_arrays_to_float"><a class="viewcode-back" href="../../func_wrapper/from_zero_dim_arrays_to_float.html#ivy.func_wrapper.from_zero_dim_arrays_to_float">[docs]</a><span class="k">def</span> <span class="nf">from_zero_dim_arrays_to_float</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="n">data_com3</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span> <span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com3</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calls the function, and then converts all 0 dimensional array instances in</span>
@@ -354,9 +351,7 @@
 
 
 <div class="viewcode-block" id="infer_dtype"><a class="viewcode-back" href="../../func_wrapper/infer_dtype.html#ivy.func_wrapper.infer_dtype">[docs]</a><span class="k">def</span> <span class="nf">infer_dtype</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="n">data_com4</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span> <span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com4</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determines the correct `dtype`, and then calls the function with the `dtype`</span>
@@ -388,9 +383,7 @@
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 <div class="viewcode-block" id="integer_arrays_to_float"><a class="viewcode-back" href="../../func_wrapper/integer_arrays_to_float.html#ivy.func_wrapper.integer_arrays_to_float">[docs]</a><span class="k">def</span> <span class="nf">integer_arrays_to_float</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="n">data_com5</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span> <span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com5</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Promotes all the integer array inputs passed to the function both</span>
@@ -430,9 +423,7 @@
 <span class="c1"># ----------------#</span>
 
 <div class="viewcode-block" id="infer_device"><a class="viewcode-back" href="../../func_wrapper/infer_device.html#ivy.func_wrapper.infer_device">[docs]</a><span class="k">def</span> <span class="nf">infer_device</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="n">data_com6</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span> <span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com6</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determines the correct `device`, and then calls the function with the `device`</span>
@@ -470,9 +461,7 @@
 <div class="viewcode-block" id="handle_out_argument"><a class="viewcode-back" href="../../func_wrapper/handle_out_argument.html#ivy.func_wrapper.handle_out_argument">[docs]</a><span class="k">def</span> <span class="nf">handle_out_argument</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
     <span class="n">handle_out_in_backend</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">&quot;support_native_out&quot;</span><span class="p">)</span>
 
-    <span class="n">data_com7</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span> <span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com7</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calls `fn` with the `out` argument handled correctly for performing an inplace</span>
@@ -519,9 +508,7 @@
 <div class="viewcode-block" id="handle_nestable"><a class="viewcode-back" href="../../func_wrapper/handle_nestable.html#ivy.func_wrapper.handle_nestable">[docs]</a><span class="k">def</span> <span class="nf">handle_nestable</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
     <span class="n">fn_name</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="vm">__name__</span>
 
-    <span class="n">data_com8</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span> <span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span>
-
-    <span class="nd">@eval</span><span class="p">(</span><span class="n">data_com8</span><span class="p">)</span>
+    <span class="nd">@compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calls `fn` with the *nestable* property of the function correctly handled.</span>
@@ -715,6 +702,9 @@
     <span class="s2">&quot;supported_device_and_dtype&quot;</span><span class="p">,</span> <span class="nb">dict</span>
 <span class="p">)</span>
 
+<span class="n">t1_stop</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
+
+<span class="n">endtime</span> <span class="o">=</span><span class="nb">print</span><span class="p">(</span><span class="n">t1_stop</span> <span class="o">-</span> <span class="n">t1_start</span><span class="p">)</span>
 </pre></div>
 
            </div>
