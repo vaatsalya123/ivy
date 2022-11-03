@@ -132,6 +132,7 @@
 <span class="kn">import</span> <span class="nn">functools</span>
 <span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">FunctionType</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">cachetools</span> <span class="kn">import</span> <span class="n">cached</span> <span class="p">,</span> <span class="n">FIFOCache</span>
 
 
 <span class="c1"># for wrapping (sequence matters)</span>
@@ -170,7 +171,10 @@
             <span class="n">arr</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">index_nest</span><span class="p">(</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">arr_idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">arr</span>
 
-<div class="viewcode-block" id="compile_function"><a class="viewcode-back" href="../../func_wrapper/compile_function.html#ivy.func_wrapper.compile_function">[docs]</a><span class="k">def</span> <span class="nf">compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+<span class="c1"># Just a native python compile function with cache #</span>
+<span class="c1"># ---------------#</span>
+<div class="viewcode-block" id="compile_function"><a class="viewcode-back" href="../../func_wrapper/compile_function.html#ivy.func_wrapper.compile_function">[docs]</a><span class="nd">@cached</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="n">FIFOCache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">12</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">compile_function</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
     <span class="n">data_comp</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;functools.wraps(fn)&quot;</span><span class="p">,</span><span class="s2">&quot;func_wrapper.py&quot;</span><span class="p">,</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data_comp</span><span class="p">)</span></div>
 
