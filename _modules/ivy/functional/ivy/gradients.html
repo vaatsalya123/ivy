@@ -82,15 +82,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/converters.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/module.html">Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/helpers.html">Helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stateful/converters.html">Converters</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Nested array</span></p>
 <ul>
@@ -404,11 +404,27 @@
     <span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_variable_data</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_variable_data</span><span class="p">(</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gets the contents of the input.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x</span>
+<span class="sd">        Input array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        An array with contents of the input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_native</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nested</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">nested_map</span><span class="p">(</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">nested_map</span><span class="p">(</span>
         <span class="n">x</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">current_backend</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">variable_data</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">include_derived</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">nested_map</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_ivy</span><span class="p">,</span> <span class="n">include_derived</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
 <span class="c1"># Extra #</span>
@@ -430,6 +446,9 @@
 
     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
         <span class="n">unset_with_grads</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="ow">and</span> <span class="p">(</span><span class="n">exc_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">exc_tb</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">exc_val</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
 
@@ -1267,7 +1286,6 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-
 <span class="sd">    With :class:`ivy.Array` inputs:</span>
 
 <span class="sd">    &gt;&gt;&gt; w = ivy.array([1., 2, 3])</span>
@@ -1375,7 +1393,6 @@
 
 <div class="viewcode-block" id="lamb_update"><a class="viewcode-back" href="../../../../functional/ivy/gradients/lamb_update/lamb_update_functional.html#ivy.functional.ivy.gradients.lamb_update">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_exceptions</span>
-<span class="nd">@handle_array_like</span>
 <span class="nd">@handle_array_like</span>
 <span class="k">def</span> <span class="nf">lamb_update</span><span class="p">(</span>
     <span class="n">w</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
