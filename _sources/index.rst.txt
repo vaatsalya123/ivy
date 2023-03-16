@@ -348,7 +348,6 @@ Citation
    :caption: Utils
 
    utils/backend.rst
-   utils/_importlib.rst
    utils/assertions.rst
    utils/dynamic_import.rst
    utils/inspection.rst
