@@ -573,51 +573,6 @@
               
   <section id="list-of-size">
 <h1>list_of_size<a class="headerlink" href="#list-of-size" title="Permalink to this heading">#</a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy_tests.test_ivy.helpers.hypothesis_helpers.array_helpers.list_of_size">
-<span class="sig-prename descclassname"><span class="pre">ivy_tests.test_ivy.helpers.hypothesis_helpers.array_helpers.</span></span><span class="sig-name descname"><span class="pre">list_of_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy_tests/test_ivy/helpers/hypothesis_helpers/array_helpers.html#list_of_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_tests.test_ivy.helpers.hypothesis_helpers.array_helpers.list_of_size" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns a list of the given length with elements drawn randomly from x.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> – a list to draw elements from.</p></li>
-<li><p><strong>size</strong> – length of the list.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>ret</em> – A strategy that draws a list.</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_size</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">x</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">sampled_from</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]),</span>
-<span class="gp">... </span>    <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="go">[-1, 5, -1, -1]</span>
-<span class="go">[9, -1, -1, -1]</span>
-<span class="go">[9, 9, -1, 9]</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_size</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">x</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">min_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-<span class="gp">... </span>    <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="go">[3, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span>
-<span class="go">[3, 3, 2, 4, 1, 0, 4, 2, 1, 2]</span>
-<span class="go">[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_size</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">x</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">booleans</span><span class="p">(),</span>
-<span class="gp">... </span>    <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="go">[False, False, False]</span>
-<span class="go">[True, True, False]</span>
-<span class="go">[False, True, False]</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </section>
 
 
