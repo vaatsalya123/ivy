@@ -12,6 +12,7 @@ from ivy.func_wrapper import (
     integer_arrays_to_float,
     handle_array_like_without_promotion,
 )
+from ivy.custom_func_wrapper import add_wrapper
 from ivy.utils.exceptions import handle_exceptions
 
 
@@ -265,11 +266,7 @@ def acosh(
     return ivy.current_backend(x).acosh(x, out=out)
 
 
-@handle_array_function
-@to_native_arrays_and_back
-@handle_out_argument
-@handle_nestable
-@handle_exceptions
+@add_wrapper
 def add(
     x1: Union[float, ivy.Array, ivy.NativeArray],
     x2: Union[float, ivy.Array, ivy.NativeArray],

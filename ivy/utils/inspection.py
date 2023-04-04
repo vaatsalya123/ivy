@@ -120,5 +120,5 @@ def fn_array_spec(fn):
 
 def add_array_specs():
     for k, v in ivy.__dict__.items():
-        if callable(v) and k[0].islower():
+        if callable(v) and k[0].islower() and k != "add_wrapper":
             v.array_spec = fn_array_spec(v)

@@ -695,6 +695,7 @@ promotion_table = {**array_api_promotion_table, **extra_promotion_table}
 
 
 from .func_wrapper import *
+from .custom_func_wrapper import add_wrapper
 from .data_classes.array import Array, add_ivy_array_instance_methods
 from .data_classes.array.conversions import *
 from .data_classes.array import conversions as arr_conversions

@@ -119,13 +119,13 @@ def _check_in_nested_sequence(sequence, value=None, _type=None):
 # ---------------#
 
 
-def handle_array_function(func):
+def handle_array_function(fn):
     """
     Wrap a function to extract the relevant argument types to be passed to
     array_function method.
     """
 
-    @functools.wraps(func)
+    @functools.wraps(fn)
     def new_func(*args, **kwargs):
         overloaded_types = []
         overloaded_args = []
@@ -170,11 +170,11 @@ def handle_array_function(func):
                             overloaded_args.insert(index, arg)
 
         success, value = try_array_function_override(
-            ivy.__dict__[func.__name__], overloaded_args, overloaded_types, args, kwargs
+            ivy.__dict__[fn.__name__], overloaded_args, overloaded_types, args, kwargs
         )
         if success:
             return value
-        return func(*args, **kwargs)
+        return fn(*args, **kwargs)
 
     new_func.handle_array_function = True
     return new_func
@@ -730,9 +730,12 @@ def _wrap_function(
             for attr in to_replace[compositional]:
                 setattr(original, attr, True)
 
-        for attr in FN_DECORATORS:
-            if hasattr(original, attr) and not hasattr(to_wrap, attr):
-                to_wrap = getattr(ivy, attr)(to_wrap)
+        if key == "add":
+            to_wrap = ivy.custom_func_wrapper.add_wrapper(to_wrap)
+        else:
+            for attr in FN_DECORATORS:
+                if hasattr(original, attr) and not hasattr(to_wrap, attr):
+                    to_wrap = getattr(ivy, attr)(to_wrap)
     return to_wrap
 
 
