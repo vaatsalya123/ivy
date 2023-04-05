@@ -147,6 +147,54 @@ class _ArrayWithElementwise(abc.ABC):
         """
         return ivy.add(self._data, x2, alpha=alpha, out=out)
 
+    def add1(
+        self: ivy.Array,
+        x2: Union[ivy.Array, ivy.NativeArray],
+        /,
+        *,
+        alpha: Optional[Union[int, float]] = None,
+        out: Optional[ivy.Array] = None,
+    ) -> ivy.Array:
+        """
+        ivy.Array instance method variant of ivy.add. This method simply wraps the
+        function, and so the docstring for ivy.add also applies to this method
+        with minimal changes.
+
+        Parameters
+        ----------
+        self
+            first input array. Should have a numeric data type.
+        x2
+            second input array. Must be compatible with ``self``
+            (see :ref:`broadcasting`). Should have a numeric data type.
+        alpha
+            optional scalar multiplier for ``x2``.
+        out
+            optional output array, for writing the result to. It must have a shape that
+            the inputs broadcast to.
+
+        Returns
+        -------
+        ret
+            an array containing the element-wise sums. The returned array must have a
+            data type determined by :ref:`type-promotion`.
+
+        Examples
+        --------
+        >>> x = ivy.array([1, 2, 3])
+        >>> y = ivy.array([4, 5, 6])
+        >>> z = x.add(y)
+        >>> print(z)
+        ivy.array([5, 7, 9])
+
+        >>> x = ivy.array([1, 2, 3])
+        >>> y = ivy.array([4, 5, 6])
+        >>> z = x.add(y, alpha=2)
+        >>> print(z)
+        ivy.array([9, 12, 15])
+        """
+        return ivy.add1(self._data, x2, alpha=alpha, out=out)
+
     def asin(self: ivy.Array, *, out: Optional[ivy.Array] = None) -> ivy.Array:
         """
         ivy.Array instance method variant of ivy.asin. This method simply wraps the

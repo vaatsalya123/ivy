@@ -56,6 +56,25 @@ add.support_native_out = True
 
 
 @_scalar_output_to_0d_array
+def add1(
+    x1: Union[float, np.ndarray],
+    x2: Union[float, np.ndarray],
+    /,
+    *,
+    alpha: Optional[Union[int, float]] = None,
+    out: Optional[np.ndarray] = None,
+) -> np.ndarray:
+    x1, x2 = ivy.promote_types_of_inputs(x1, x2)
+    if alpha not in (1, None):
+        with ivy.ArrayMode(False):
+            x2 = multiply(x2, alpha)
+    return np.add(x1, x2, out=out)
+
+
+add1.support_native_out = True
+
+
+@_scalar_output_to_0d_array
 def asin(x: np.ndarray, /, *, out: Optional[np.ndarray] = None) -> np.ndarray:
     return np.arcsin(x, out=out)
 

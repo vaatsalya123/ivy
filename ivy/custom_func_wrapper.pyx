@@ -616,5 +616,5 @@ def add_wrapper(fn):
             _print_traceback_history()
             raise ivy.utils.exceptions.IvyBackendException(fn.__name__, str(e))
         # --------------------------------
-
+    new_fn.add_wrapper = True
     return new_fn

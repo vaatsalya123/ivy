@@ -29,6 +29,7 @@ FN_DECORATORS = [
     "with_unsupported_dtypes",
     "handle_nans",
     "handle_mixed_function",
+    "add_wrapper",
 ]
 
 
@@ -730,12 +731,9 @@ def _wrap_function(
             for attr in to_replace[compositional]:
                 setattr(original, attr, True)
 
-        if key == "add":
-            to_wrap = ivy.custom_func_wrapper.add_wrapper(to_wrap)
-        else:
-            for attr in FN_DECORATORS:
-                if hasattr(original, attr) and not hasattr(to_wrap, attr):
-                    to_wrap = getattr(ivy, attr)(to_wrap)
+        for attr in FN_DECORATORS:
+            if hasattr(original, attr) and not hasattr(to_wrap, attr):
+                to_wrap = getattr(ivy, attr)(to_wrap)
     return to_wrap
 
 

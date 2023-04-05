@@ -42,6 +42,26 @@ def add(
     return paddle.add(x1, x2).cast(ret_dtype)
 
 
+@with_unsupported_device_and_dtypes(
+    {"2.4.2 and below": {"cpu": ("uint16", "bfloat16")}}, backend_version
+)
+def add1(
+    x1: Union[float, paddle.Tensor],
+    x2: Union[float, paddle.Tensor],
+    /,
+    *,
+    alpha: Optional[Union[int, float]] = None,
+    out: Optional[paddle.Tensor] = None,
+) -> paddle.Tensor:
+    x1, x2, ret_dtype = _elementwise_helper(x1, x2)
+    if x1.dtype in [paddle.int8, paddle.uint8, paddle.float16, paddle.bool]:
+        x1, x2 = x1.cast("float32"), x2.cast("float32")
+    if alpha not in (1, None):
+        x2 = ivy.to_native(multiply(x2, alpha))
+        x1, x2 = ivy.promote_types_of_inputs(x1, x2)
+    return paddle.add(x1, x2).cast(ret_dtype)
+
+
 def bitwise_xor(
     x1: Union[int, bool, paddle.Tensor],
     x2: Union[int, bool, paddle.Tensor],

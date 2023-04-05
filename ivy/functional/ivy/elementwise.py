@@ -266,7 +266,11 @@ def acosh(
     return ivy.current_backend(x).acosh(x, out=out)
 
 
-@add_wrapper
+@handle_array_function
+@to_native_arrays_and_back
+@handle_out_argument
+@handle_nestable
+@handle_exceptions
 def add(
     x1: Union[float, ivy.Array, ivy.NativeArray],
     x2: Union[float, ivy.Array, ivy.NativeArray],
@@ -380,6 +384,122 @@ def add(
                 [-4.7]]])
     """
     return ivy.current_backend(x1, x2).add(x1, x2, alpha=alpha, out=out)
+
+
+@add_wrapper
+def add1(
+    x1: Union[float, ivy.Array, ivy.NativeArray],
+    x2: Union[float, ivy.Array, ivy.NativeArray],
+    /,
+    *,
+    alpha: Optional[Union[int, float]] = None,
+    out: Optional[ivy.Array] = None,
+) -> ivy.Array:
+    """Calculates the sum for each element ``x1_i`` of the input array ``x1`` with the
+    respective element ``x2_i`` of the input array ``x2``.
+
+    **Special cases**
+
+    For floating-point operands,
+
+    - If either ``x1_i`` or ``x2_i`` is ``NaN``, the result is ``NaN``.
+    - If ``x1_i`` is ``+infinity`` and ``x2_i`` is ``-infinity``, the result is ``NaN``.
+    - If ``x1_i`` is ``-infinity`` and ``x2_i`` is ``+infinity``, the result is ``NaN``.
+    - If ``x1_i`` is ``+infinity`` and ``x2_i`` is ``+infinity``, the result is
+      ``+infinity``.
+    - If ``x1_i`` is ``-infinity`` and ``x2_i`` is ``-infinity``, the result is
+      ``-infinity``.
+    - If ``x1_i`` is ``+infinity`` and ``x2_i`` is a finite number, the result is
+      ``+infinity``.
+    - If ``x1_i`` is ``-infinity`` and ``x2_i`` is a finite number, the result is
+      ``-infinity``.
+    - If ``x1_i`` is a finite number and ``x2_i`` is ``+infinity``, the result is
+      ``+infinity``.
+    - If ``x1_i`` is a finite number and ``x2_i`` is ``-infinity``, the result is
+      ``-infinity``.
+    - If ``x1_i`` is ``-0`` and ``x2_i`` is ``-0``, the result is ``-0``.
+    - If ``x1_i`` is ``-0`` and ``x2_i`` is ``+0``, the result is ``+0``.
+    - If ``x1_i`` is ``+0`` and ``x2_i`` is ``-0``, the result is ``+0``.
+    - If ``x1_i`` is ``+0`` and ``x2_i`` is ``+0``, the result is ``+0``.
+    - If ``x1_i`` is either ``+0`` or ``-0`` and ``x2_i`` is a nonzero finite number,
+      the result is ``x2_i``.
+    - If ``x1_i`` is a nonzero finite number and ``x2_i`` is either ``+0`` or ``-0``,
+      the result is ``x1_i``.
+    - If ``x1_i`` is a nonzero finite number and ``x2_i`` is ``-x1_i``, the result is
+      ``+0``.
+    - In the remaining cases, when neither ``infinity``, ``+0``, ``-0``, nor a ``NaN``
+      is involved, and the operands have the same mathematical sign or have different
+      magnitudes, the sum must be computed and rounded to the nearest representable
+      value according to IEEE 754-2019 and a supported round mode. If the magnitude is
+      too large to represent, the operation overflows and the result is an `infinity`
+      of appropriate mathematical sign.
+
+    .. note::
+       Floating-point addition is a commutative operation, but not always associative.
+
+    Parameters
+    ----------
+    x1
+        first input array. Should have a numeric data type.
+    x2
+        second input array. Must be compatible with ``x1`` (see :ref:`broadcasting`).
+        Should have a numeric data type.
+    alpha
+        optional scalar multiplier for ``x2``.
+    out
+        optional output array, for writing the result to. It must have a shape that the
+        inputs broadcast to.
+
+    Returns
+    -------
+    ret
+        an array containing the element-wise sums. The returned array must have a data
+        type determined by :ref:`type-promotion`.
+
+
+    This function conforms to the `Array API Standard
+    <https://data-apis.org/array-api/latest/>`_. This docstring is an extension of the
+    `docstring <https://data-apis.org/array-api/latest/API_specification/generated/signatures.elementwise_functions.add.html>`_ # noqa
+    in the standard.
+
+    Both the description and the type hints above assumes an array input for simplicity,
+    but this function is *nestable*, and therefore also accepts :class:`ivy.Container`
+    instances in place of any of the arguments
+
+    Examples
+    --------
+    With :class:`ivy.Array` inputs:
+
+    >>> x = ivy.array([1, 2, 3])
+    >>> y = ivy.array([4, 5, 6])
+    >>> z = ivy.add(x, y)
+    >>> print(z)
+    ivy.array([5, 7, 9])
+
+    >>> x = ivy.array([1, 2, 3])
+    >>> y = ivy.array([4, 5, 6])
+    >>> z = ivy.add(x, y, alpha=2)
+    >>> print(z)
+    ivy.array([9, 12, 15])
+
+    >>> x = ivy.array([[1.1, 2.3, -3.6]])
+    >>> y = ivy.array([[4.8], [5.2], [6.1]])
+    >>> z = ivy.zeros((3, 3))
+    >>> ivy.add(x, y, out=z)
+    >>> print(z)
+    ivy.array([[5.9, 7.1, 1.2],
+               [6.3, 7.5, 1.6],
+               [7.2, 8.4, 2.5]])
+
+    >>> x = ivy.array([[[1.1], [3.2], [-6.3]]])
+    >>> y = ivy.array([[8.4], [2.5], [1.6]])
+    >>> ivy.add(x, y, out=x)
+    >>> print(x)
+    ivy.array([[[9.5],
+                [5.7],
+                [-4.7]]])
+    """
+    return ivy.current_backend(x1, x2).add1(x1, x2, alpha=alpha, out=out)
 
 
 @handle_array_function

@@ -33,6 +33,23 @@ def add(
 add.support_native_out = True
 
 
+def add1(
+    x1: Union[float, torch.Tensor],
+    x2: Union[float, torch.Tensor],
+    /,
+    *,
+    alpha: Optional[Union[int, float]] = None,
+    out: Optional[torch.Tensor] = None,
+) -> torch.Tensor:
+    x1, x2 = ivy.promote_types_of_inputs(x1, x2)
+    if alpha not in (1, None):
+        return torch.add(x1, x2, alpha=alpha, out=out)
+    return torch.add(x1, x2, out=out)
+
+
+add1.support_native_out = True
+
+
 @with_unsupported_dtypes({"1.11.0 and below": ("complex",)}, backend_version)
 def bitwise_xor(
     x1: Union[int, bool, torch.Tensor],

@@ -56,6 +56,21 @@ def add(
     return tf.add(x1, x2)
 
 
+def add1(
+    x1: Union[float, tf.Tensor, tf.Variable],
+    x2: Union[float, tf.Tensor, tf.Variable],
+    /,
+    *,
+    alpha: Optional[Union[int, float]] = None,
+    out: Optional[Union[tf.Tensor, tf.Variable]] = None,
+) -> Union[tf.Tensor, tf.Variable]:
+    x1, x2 = ivy.promote_types_of_inputs(x1, x2)
+    if alpha not in (1, None):
+        with ivy.ArrayMode(False):
+            x2 = multiply(x2, alpha)
+    return tf.add(x1, x2)
+
+
 def asin(
     x: Union[tf.Tensor, tf.Variable],
     /,
