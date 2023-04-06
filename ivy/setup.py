@@ -26,6 +26,8 @@ def get_modules():
     for filename in os.listdir():
         if filename.endswith(".pyx"):
             modules.append(Extension(filename[:-4], [filename]))
+        elif filename.endswith(".so") and ".cpython" in filename:
+            os.rename(filename, filename[: filename.find(".cpython")] + ".so")
     return modules
 
 
@@ -41,3 +43,5 @@ setup(
         annotate=not no_docstrings,
     ),
 )
+
+get_modules()

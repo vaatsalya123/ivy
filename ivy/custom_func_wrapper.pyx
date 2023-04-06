@@ -1,122 +1,19 @@
-import contextlib
-import numbers
+from typing import Union, Optional, Callable
+import functools
 import ivy
-import functools
-import logging
-import weakref
-import warnings
-import copy as python_copy
-from types import FunctionType
-from typing import Callable
-import inspect
-import functools
-import sys
-import traceback as tb
+from ivy.func_wrapper import *
 
 
-
-def try_array_function_override(func, overloaded_args, types, args, kwargs):
-    if not overloaded_args:
-        return False, None
-
-    for overloaded_arg in overloaded_args:
-        # Note that we're only calling __ivy_array_function__ on the *first*
-        # occurence of each argument type. This is necessary for reasonable
-        # performance with a possibly long list of overloaded arguments, for
-        # which each __ivy_array_function__ implementation might reasonably need to
-        # check all argument types.
-        try:
-            result = overloaded_arg.__ivy_array_function__(func, types, args, kwargs)
-        except Exception:
-            raise ivy.utils.exceptions.IvyNotImplementedException
-
-        if result is not NotImplemented:
-            return True, result
-
-    raise TypeError(
-        "no implementation found for {} on types that implement "
-        "__ivy_array_function__: {}".format(func, list(map(type, overloaded_args)))
-    )
-
-
-def _log_stack_trace_truncated(trace_mode, func_wrapper_trace_mode):
-    if trace_mode in ["frontend", "ivy"]:
-        print(
-            "<stack trace is truncated to {} specific files,".format(trace_mode),
-            "call `ivy.set_exception_trace_mode('full')` to view the full trace>",
-        )
-    if not func_wrapper_trace_mode:
-        print(
-            "<func_wrapper.py stack trace is squashed,",
-            "call `ivy.set_show_func_wrapper_trace_mode(True)` in order to view this>",
-        )
-
-
-def _print_new_stack_trace(old_stack_trace, trace_mode, func_wrapper_trace_mode):
-    _log_stack_trace_truncated(trace_mode, func_wrapper_trace_mode)
-    new_stack_trace = []
-    for st in old_stack_trace:
-        if trace_mode == "full" and not func_wrapper_trace_mode:
-            if "func_wrapper.py" not in repr(st):
-                new_stack_trace.append(st)
-        else:
-            if ivy.trace_mode_dict[trace_mode] in repr(st):
-                if not func_wrapper_trace_mode and "func_wrapper.py" in repr(st):
-                    continue
-                new_stack_trace.append(st)
-    print("".join(tb.format_list(new_stack_trace)))
-
-
-def _print_traceback_history():
-    trace_mode = ivy.get_exception_trace_mode()
-    func_wrapper_trace_mode = ivy.get_show_func_wrapper_trace_mode()
-    if trace_mode == "none":
-        return
-    if trace_mode == "full" and func_wrapper_trace_mode:
-        print("".join(tb.format_tb(sys.exc_info()[2])))
-    else:
-        _print_new_stack_trace(
-            tb.extract_tb(sys.exc_info()[2]), trace_mode, func_wrapper_trace_mode
-        )
-    print("During the handling of the above exception, another exception occurred:\n")
-
-
-class IvyException(Exception):
-    def __init__(self, message):
-        super().__init__(message)
-
-
-class IvyBackendException(IvyException):
-    def __init__(self, *messages):
-        self._default = [
-            "numpy" if ivy.current_backend_str() == "" else ivy.current_backend_str()
-        ]
-        self._delimiter = ": "
-        for message in messages:
-            self._default.append(message)
-        super().__init__(self._delimiter.join(self._default))
-
-
-class IvyNotImplementedException(NotImplementedError):
-    def __init__(self, message=""):
-        super().__init__(message)
-
-
-class IvyError(IndexError, ValueError, AttributeError, IvyException):
-    def __init__(self, *messages):
-        self._default = [
-            "numpy" if ivy.current_backend_str() == "" else ivy.current_backend_str()
-        ]
-        self._delimiter = ": "
-        for message in messages:
-            self._default.append(message)
-        super().__init__(self._delimiter.join(self._default))
-
-
-def add_wrapper(fn):
+def add_wrapper(fn: Callable):
     @functools.wraps(fn)
-    def new_fn(*args, **kwargs):
-
+    def new_fn(
+        x1: Union[float, ivy.Array, ivy.NativeArray, ivy.Container],
+        x2: Union[float, ivy.Array, ivy.NativeArray, ivy.Container],
+        alpha: Optional[Union[int, float, ivy.Container]] = None,
+        out: Optional[Union[ivy.Array, ivy.Container]] = None,
+    ):
+        args = [x1, x2]
+        kwargs = {'alpha': alpha, 'out': out}
         # handle_exceptions
         try:
 
