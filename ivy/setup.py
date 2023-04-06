@@ -9,7 +9,7 @@ import os
 # Enable AddressSanitizer in Cython
 get_directive_defaults()["linetrace"] = True
 get_directive_defaults()["binding"] = True
-# get_directive_defaults()['cdivision'] = True
+get_directive_defaults()["cdivision"] = True
 # get_directive_defaults()['embedsignature'] = True
 get_directive_defaults()["boundscheck"] = False
 # get_directive_defaults()['wraparound'] = False
