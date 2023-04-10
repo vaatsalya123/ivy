@@ -266,11 +266,7 @@ def acosh(
     return ivy.current_backend(x).acosh(x, out=out)
 
 
-@handle_array_function
 @to_native_arrays_and_back
-@handle_out_argument
-@handle_nestable
-@handle_exceptions
 def add(
     x1: Union[float, ivy.Array, ivy.NativeArray],
     x2: Union[float, ivy.Array, ivy.NativeArray],
