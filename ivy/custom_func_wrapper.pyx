@@ -31,6 +31,7 @@ def add_wrapper(fn: Callable):
         alpha: float = None,
         out: ivy.Array = None,
     ):
+        # currently restricted to comparing based on the to_native_arrays_and_back_decorator
         # outputs_to_ivy_arrays
 
         # call unmodified function
