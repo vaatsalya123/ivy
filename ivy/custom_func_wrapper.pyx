@@ -11,7 +11,9 @@ def add_wrapper(fn: Callable):
         alpha: float = None,
         out: ivy.Array = None,
     ):
+        # inputs_to_native_arrays
         x1, x2 = x1._data, x2._data
+        # outputs_to_ivy_arrays
         ret: ivy.Array = fn(x1, x2, alpha=alpha)
         return ivy.asarray(ret)
     new_fn.add_wrapper = True
