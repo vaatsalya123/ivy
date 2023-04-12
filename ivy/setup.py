@@ -4,9 +4,8 @@ from Cython.Compiler.Options import get_directive_defaults
 import sys
 import os
 
-# os.environ['LDSHARED'] = 'clang -shared' # ToDo add user compiler inputs instead
+os.environ['LDSHARED'] = 'clang -shared' # ToDo add user compiler inputs instead
 
-# Enable AddressSanitizer in Cython
 get_directive_defaults()["linetrace"] = True
 get_directive_defaults()["binding"] = True
 get_directive_defaults()["cdivision"] = True
@@ -15,7 +14,7 @@ get_directive_defaults()["boundscheck"] = False
 # get_directive_defaults()['wraparound'] = False
 get_directive_defaults()["profile"] = False
 get_directive_defaults()["infer_types"] = True
-get_directive_defaults()["annotation_typing"] = True
+get_directive_defaults()["annotation_typing"] = False
 get_directive_defaults()["fast_getattr"] = True
 get_directive_defaults()["c_string_encoding"] = "ascii"
 get_directive_defaults()["c_string_type"] = "char"
