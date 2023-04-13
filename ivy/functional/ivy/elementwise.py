@@ -267,7 +267,7 @@ def acosh(
     return ivy.current_backend(x).acosh(x, out=out)
 
 
-@handle_array_function
+# @handle_array_function
 @to_native_arrays_and_back
 @handle_out_argument
 @handle_nestable
