@@ -27,3 +27,4 @@ pyspark
 mxnet
 autoflake # for backend generation
 snakeviz # for profiling
+Cython
