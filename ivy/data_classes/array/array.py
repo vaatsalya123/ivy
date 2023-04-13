@@ -152,9 +152,10 @@ class Array(
         self._size = (
             functools.reduce(mul, self._data.shape) if len(self._data.shape) > 0 else 0
         )
-        self._itemsize = ivy.itemsize(self._data)
-        self._dtype = ivy.dtype(self._data)
-        self._device = ivy.dev(self._data)
+        with ivy.ArrayMode(False):
+            self._itemsize = ivy.itemsize(self._data)
+            self._dtype = ivy.dtype(self._data)
+            self._device = ivy.dev(self._data)
         self._dev_str = ivy.as_ivy_dev(self._device)
         self._pre_repr = "ivy.array"
         if "gpu" in self._dev_str:

@@ -8,13 +8,12 @@ from ivy.utils.exceptions import _print_traceback_history, IvyNotImplementedExce
 def add_wrapper(fn: Callable):
     @functools.wraps(fn)
     def new_fn(
-        x1: Union[float, ivy.Array, ivy.NativeArray],
-        x2: Union[float, ivy.Array, ivy.NativeArray],
-        alpha: Optional[Union[int, float]] = None,
+        x1: ivy.Array,
+        x2: ivy.Array,
+        alpha: Optional[float] = None,
         out: Optional[ivy.Array] = None,
     ):
         # handle_exceptions
-
         try:
             # handle_nestable
 
@@ -36,6 +35,9 @@ def add_wrapper(fn: Callable):
                 ret = cont_fn(x1, x2, alpha=alpha, out=out)
             else:
                 array_mode: bool = ivy.get_array_mode()
+                if not array_mode:
+                    ret = fn(x1, x2, alpha=alpha, out=out)
+                    return ret
                 # if the passed arguments does not contain a container, the function using
                 # the passed arguments, returning an ivy or a native array.
 
@@ -51,26 +53,23 @@ def add_wrapper(fn: Callable):
 
                     # inputs_to_native_arrays
 
-                    if not array_mode:
-                        ret = fn(x1, x2, alpha=alpha, out=out)
-                    else:
-                        # check if kwargs contains an out argument, and if so, remove it
-                        has_out = False
-                        out_temp = None
-                        if out is not None:
-                            out_temp = out
-                            has_out = True
-                        # convert all arrays in the inputs to ivy.NativeArray instances
-                        x1, x2 = x1._data, x2._data
-                        # add the original out argument back to the keyword arguments
-                        if has_out:
-                            out = out_temp
-                        ret = fn(x1, x2, alpha=alpha, out=out)
+                    # check if kwargs contains an out argument, and if so, remove it
+                    has_out = False
+                    out_temp = None
+                    if out is not None:
+                        out_temp = out
+                        has_out = True
+                    # convert all arrays in the inputs to ivy.NativeArray instances
+                    x1, x2 = x1._data if isinstance(x1, ivy.Array) else x1, x2._data if isinstance(x2, ivy.Array) else x2
+                    # add the original out argument back to the keyword arguments
+                    if has_out:
+                        out = out_temp
+                    ret = fn(x1, x2, alpha=alpha, out=out)
 
                     # --------------------------------------
 
                     # convert all arrays in the return to `ivy.Array` instances
-                    ret = ivy.asarray(ret) if array_mode else ret
+                    ret = ivy.Array(ret)
 
                     # --------------------------------------
 
@@ -93,26 +92,23 @@ def add_wrapper(fn: Callable):
 
                         # inputs_to_native_arrays
 
-                        if not array_mode:
-                            ret = fn(x1, x2, alpha=alpha, out=native_out)
-                        else:
-                            # check if kwargs contains an out argument, and if so, remove it
-                            has_out = False
-                            out_temp = None
-                            if out is not None:
-                                out_temp = native_out
-                                has_out = True
-                            # convert all arrays in the inputs to ivy.NativeArray instances
-                            x1, x2 = x1._data, x2._data
-                            # add the original out argument back to the keyword arguments
-                            if has_out:
-                                native_out = out_temp
-                            ret = fn(x1, x2, alpha=alpha, out=native_out)
+                        # check if kwargs contains an out argument, and if so, remove it
+                        has_out = False
+                        out_temp = None
+                        if out is not None:
+                            out_temp = native_out
+                            has_out = True
+                        # convert all arrays in the inputs to ivy.NativeArray instances
+                        x1, x2 = x1._data if isinstance(x1, ivy.Array) else x1, x2._data if isinstance(x2, ivy.Array) else x2
+                        # add the original out argument back to the keyword arguments
+                        if has_out:
+                            native_out = out_temp
+                        ret = fn(x1, x2, alpha=alpha, out=native_out)
 
                         # --------------------------------------
 
                         # convert all arrays in the return to `ivy.Array` instances
-                        ret = ivy.asarray(ret) if array_mode else ret
+                        ret = ivy.Array(ret)
 
                         # --------------------------------------
                         
@@ -136,26 +132,23 @@ def add_wrapper(fn: Callable):
 
                         # inputs_to_native_arrays
                         
-                        if not array_mode:
-                            ret = fn(x1, x2, alpha=alpha, out=out)
-                        else:
-                            # check if kwargs contains an out argument, and if so, remove it
-                            has_out = False
-                            out_temp = None
-                            if out is not None:
-                                out_temp = out
-                                has_out = True
-                            # convert all arrays in the inputs to ivy.NativeArray instances
-                            x1, x2 = x1._data, x2._data
-                            # add the original out argument back to the keyword arguments
-                            if has_out:
-                                out = out_temp
-                            ret = fn(x1, x2, alpha=alpha, out=out)
+                        # check if kwargs contains an out argument, and if so, remove it
+                        has_out = False
+                        out_temp = None
+                        if out is not None:
+                            out_temp = out
+                            has_out = True
+                        # convert all arrays in the inputs to ivy.NativeArray instances
+                        x1, x2 = x1._data if isinstance(x1, ivy.Array) else x1, x2._data if isinstance(x2, ivy.Array) else x2
+                        # add the original out argument back to the keyword arguments
+                        if has_out:
+                            out = out_temp
+                        ret = fn(x1, x2, alpha=alpha, out=out)
 
                         # --------------------------------------
 
                         # convert all arrays in the return to `ivy.Array` instances
-                        ret = ivy.asarray(ret) if array_mode else ret
+                        ret = ivy.Array(ret)
 
                         # --------------------------------------
 

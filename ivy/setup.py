@@ -4,7 +4,7 @@ from Cython.Compiler.Options import get_directive_defaults
 import sys
 import os
 
-os.environ['LDSHARED'] = 'clang -shared' # ToDo add user compiler inputs instead
+# os.environ['LDSHARED'] = 'clang -shared' # ToDo add user compiler inputs instead
 
 get_directive_defaults()["linetrace"] = True
 get_directive_defaults()["binding"] = True
