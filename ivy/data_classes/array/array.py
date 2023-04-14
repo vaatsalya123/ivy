@@ -148,12 +148,15 @@ class Array(
             raise ivy.utils.exceptions.IvyException(
                 "data must be ivy array, native array or ndarray"
             )
-        self._shape = self._data.shape
-        self._size = functools.reduce(mul, self._data.shape, 0)
+        self._shape = None
+        self._size = None
         self._itemsize = None
         self._dtype = None
         self._device = None
-        self.backend = ivy.current_backend_str()
+        self._dev_str = None
+        self._pre_repr = None
+        self._post_repr = None
+        self.backend: str = ivy.current_backend_str()
         if dynamic_backend is not None:
             self._dynamic_backend = dynamic_backend
         else:
@@ -220,14 +223,7 @@ class Array(
     def device(self) -> ivy.Device:
         """Hardware device the array data resides on."""
         if self._device is None:
-            with ivy.ArrayMode(False):
-                self._device = ivy.dev(self._data)
-            self._dev_str = ivy.as_ivy_dev(self._device)
-            self._pre_repr = "ivy.array"
-            if "gpu" in self._dev_str:
-                self._post_repr = ", dev={})".format(self._dev_str)
-            else:
-                self._post_repr = ")"
+            self._device = ivy.dev(self._data)
         return self._device
 
     @property
@@ -249,16 +245,22 @@ class Array(
     @property
     def ndim(self) -> int:
         """Number of array dimensions (axes)."""
+        if self._shape is None:
+            self._shape = self._data.shape
         return len(tuple(self._shape))
 
     @property
     def shape(self) -> ivy.Shape:
         """Array dimensions."""
+        if self._shape is None:
+            self._shape = self._data.shape
         return ivy.Shape(self._shape)
 
     @property
     def size(self) -> Optional[int]:
         """Number of elements in the array."""
+        if self._size is None:
+            self._size = functools.reduce(mul, self._data.shape, 0)
         return self._size
 
     @property
@@ -341,10 +343,8 @@ class Array(
         return ivy
 
     def __repr__(self):
-        if self._device is None:
-            with ivy.ArrayMode(False):
-                self._device = ivy.dev(self._data)
-            self._dev_str = ivy.as_ivy_dev(self._device)
+        if self._dev_str is None:
+            self._dev_str = ivy.as_ivy_dev(self.device)
             self._pre_repr = "ivy.array"
             if "gpu" in self._dev_str:
                 self._post_repr = ", dev={})".format(self._dev_str)
@@ -360,7 +360,7 @@ class Array(
             # from the currently set backend
             backend = ivy.with_backend(self.backend, cached=True)
         arr_np = backend.to_numpy(self._data)
-        rep = ivy.vec_sig_fig(arr_np, sig_fig) if self._size > 0 else np.array(arr_np)
+        rep = ivy.vec_sig_fig(arr_np, sig_fig) if self.size > 0 else np.array(arr_np)
         with np.printoptions(precision=dec_vals):
             repr = rep.__repr__()[:-1].partition(", dtype")[0].partition(", dev")[0]
             return (
