@@ -149,19 +149,10 @@ class Array(
                 "data must be ivy array, native array or ndarray"
             )
         self._shape = self._data.shape
-        self._size = (
-            functools.reduce(mul, self._data.shape) if len(self._data.shape) > 0 else 0
-        )
-        with ivy.ArrayMode(False):
-            self._itemsize = ivy.itemsize(self._data)
-            self._dtype = ivy.dtype(self._data)
-            self._device = ivy.dev(self._data)
-        self._dev_str = ivy.as_ivy_dev(self._device)
-        self._pre_repr = "ivy.array"
-        if "gpu" in self._dev_str:
-            self._post_repr = ", dev={})".format(self._dev_str)
-        else:
-            self._post_repr = ")"
+        self._size = functools.reduce(mul, self._data.shape, 0)
+        self._itemsize = None
+        self._dtype = None
+        self._device = None
         self.backend = ivy.current_backend_str()
         if dynamic_backend is not None:
             self._dynamic_backend = dynamic_backend
@@ -221,11 +212,22 @@ class Array(
     @property
     def dtype(self) -> ivy.Dtype:
         """Data type of the array elements"""
+        if self._dtype is None:
+            self._dtype = ivy.dtype(self._data)
         return self._dtype
 
     @property
     def device(self) -> ivy.Device:
         """Hardware device the array data resides on."""
+        if self._device is None:
+            with ivy.ArrayMode(False):
+                self._device = ivy.dev(self._data)
+            self._dev_str = ivy.as_ivy_dev(self._device)
+            self._pre_repr = "ivy.array"
+            if "gpu" in self._dev_str:
+                self._post_repr = ", dev={})".format(self._dev_str)
+            else:
+                self._post_repr = ")"
         return self._device
 
     @property
@@ -262,6 +264,8 @@ class Array(
     @property
     def itemsize(self) -> Optional[int]:
         """Size of array elements in bytes."""
+        if self._itemsize is None:
+            self._itemsize = ivy.itemsize(self._data)
         return self._itemsize
 
     @property
@@ -337,6 +341,15 @@ class Array(
         return ivy
 
     def __repr__(self):
+        if self._device is None:
+            with ivy.ArrayMode(False):
+                self._device = ivy.dev(self._data)
+            self._dev_str = ivy.as_ivy_dev(self._device)
+            self._pre_repr = "ivy.array"
+            if "gpu" in self._dev_str:
+                self._post_repr = ", dev={})".format(self._dev_str)
+            else:
+                self._post_repr = ")"
         sig_fig = ivy.array_significant_figures()
         dec_vals = ivy.array_decimal_values()
         if self.backend == "":
